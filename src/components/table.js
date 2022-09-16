@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react'
-import { useTable } from 'react-table'
-import MOCK_DATA from './components/mock-data.json'
-import { COLUMNS } from './columns'
-import './table.css'
+import React, { useMemo } from 'react';
+import { useTable } from 'react-table';
+import MOCK_DATA from './mock-data.json';
+import { COLUMNS } from './columns';
+import './table.css';
 
 export const Table = () => {
 

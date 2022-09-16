@@ -1,13 +1,156 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: 012d4f;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-size : 30px;
+}
+
+h2 {
+  color: #012d4f;
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+
+h4 {
+  margin-bottom: 10px;
+}
+
+/* navbar css */
+
+.navbar {
+  padding: 10px;
+  display: flex;
+  background-color: #00589b;
+  align-items: center;
+  /*max-width: 1000px;*/
+  margin: 0 auto;
+  /*border-bottom: 1px solid #555;*/
+}
+
+.navbar .links {
+    margin-left: auto;
+    padding: 1.25%;
+    border: 5px solid white;
+  }
+
+.navbar a {
+  margin-left: 8px;
+  margin-right: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px;
+  color : white;
+}
+
+.navbar a:hover {
+  color: #012d4f;
+  text-decoration: underline;
+}
+
+.register, .login, .login, .deploy, .mySensors, .historical {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  opacity: 1.0 !important;
+}
+
+.register input, .create textarea, .create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.login input, .create textarea, .create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.loginStandalone input, .create textarea, .create select, .loginStandalone div {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.login input, .create textarea, .create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.loginStandalone {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.loginStandalone h1 {
+  color: #00c988;
+  margin: auto;
+  text-align: center;
+  font-size: 80px;
+  padding-bottom: 50px;
+}
+
+.home {
+  width: 100%;
+  margin: 0 0;
+  overflow: scroll;
+}
+
+.homepageText {
+  font-size: 200%;
+  font-weight: normal;
+  color: #012d4f;
+  position:relative;
+  opacity: 90%;
+  padding: 10%;
+  text-align: center;
+}
+
+/* popup stuff */
+.modal { font-size: 12px;}
+.modal .header { 
+  width: 100%; 
+  border-bottom: 1px solid gray; 
+  font-size: 18px; 
+  text-align: center; 
+  padding: 5px;
+}
+.modal .content { 
+  width: 100%; padding: 10px 5px;
+}
+.modal .actions { 
+      width: 100%; 
+      padding: 10px 5px; 
+      margin: auto; 
+      text-align: center;
+    }
+.modal .close { 
+  cursor: pointer; 
+  position: absolute; 
+  display: block; 
+  padding: 2px 5px; 
+  line-height: 20px; 
+  right: -10px; 
+  top: -10px; 
+  font-size: 24px; 
+  background: #ffffff; 
+  border-radius: 18px; 
+  border: 1px solid #cfcece;
 }
