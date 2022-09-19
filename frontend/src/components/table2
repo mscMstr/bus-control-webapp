@@ -1,0 +1,109 @@
+import React from 'react';
+ 
+class Table2 extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {bus: []};
+        this.headers = [
+            { key: 'run', label: 'Run'},
+            { key: 'run_relief', label: 'Run Relief' },
+            { key: 'bus', label: 'Bus' },
+            { key: 'time_due', label: 'Time Due' },
+            { key: 'expected', label: 'Expected' },
+            { key: 'recommended', label: 'Recommended' },
+            { key: 'executed', label: 'Exectuted' }
+        ];
+        this.state = { checkedBoxes: [] };
+        this.cancelTrip = this.cancelTrip.bind(this);
+        this.toggleCheckbox = this.toggleCheckbox.bind(this);
+    }
+     
+    cancelTrip = (event) => {
+        event.preventDefault();
+        if(window.confirm('Are you sure, want to cancel the selected trip(s)?')) {
+            alert(this.state.checkedBoxes + " Succesfully Deleted");
+        }
+    }
+     
+    toggleCheckbox = (e, item) => {      
+        if(e.target.checked) {
+            let arr = this.state.checkedBoxes;
+            arr.push(item.id);
+             
+            this.setState = { checkedBoxes: arr};
+        } else {            
+            let items = this.state.checkedBoxes.splice(this.state.checkedBoxes.indexOf(item.id), 1);
+             
+            this.setState = {
+                checkedBoxes: items
+            }
+        }       
+        console.log(this.state.checkedBoxes);
+    }
+     
+    componentDidMount() {
+        fetch('pilot-db2.chibbh1lc0xt.us-east-1.rds.amazonaws.com').then(response => {
+            console.log(response);
+            return response.json();
+          }).then(result => {
+            // Work with JSON data here
+            console.log(result);
+            this.setState({
+                bus_rs:result
+            }); 
+          }).catch(err => {
+            // Do something for an error here
+            console.log("Error Reading data " + err);
+          });
+    }
+         
+    render() {
+        const busFound = this.state.bus_rs && this.state.bus_rs.length;
+        if(busFound) {
+            return (
+                <div className="container"><h1>ReactJS Fetch Data from Database with PHP Mysql</h1>
+                    <div id="msg"></div>
+                    <button type="button" className="btn btn-danger" onClick={this.cancelTrip}>Cancel Selected Trips(s)</button>
+                    <table className="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                {
+                                    this.headers.map(function(h) {
+                                        return (
+                                            <th key={h.key}>{h.label}</th>
+                                        )
+                                    })
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                this.state.bus_rs.map(function(item, index) {
+                                return (
+                                    <tr key={index}>
+                                      <td><input type="checkbox" className="selectsingle" value="{item.id}" checked={this.state.checkedBoxes.find((p) => p.id === item.id)} onChange={(e) => this.toggleCheckbox(e, item)}/>
+                                        {item.run}
+                                      </td>
+                                      <td>{item.run_relief}</td>
+                                      <td>{item.bus}</td>
+                                      <td>{item.time_due}</td>
+                                      <td>{item.expected}</td>
+                                      <td>{item.recommended}</td>
+                                      <td>{item.executed}</td>
+                                    </tr>
+                                )}.bind(this))
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            )
+        } else {
+            return (
+                <div id="container">
+                    No product found
+                </div>
+            )
+        }
+    }
+}
+export default Table2;
