@@ -86,7 +86,7 @@ class App extends React.Component {
     this.cancelTrip = this.cancelTrip.bind(this);
     this.toggleCheckbox = this.toggleCheckbox.bind(this);
     */
-}
+//}
  
 /*
 cancelTrip = (event) => {
