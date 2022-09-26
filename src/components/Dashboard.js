@@ -4,6 +4,7 @@ import Table2 from "./table2";
 import { ReactDOM } from 'react';
 import MOCK_DATA from './mock-data.json';
 import { useState, useEffect } from "react";
+import { Data } from "./tableData.js";
 
 const Dashboard = () => {
     /*const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -39,15 +40,6 @@ const Dashboard = () => {
         <div>
             <h2>Bus Trip Dashboard</h2>
             <Table />
-            <header className="App-header">
-				<h1>React and flask</h1>
-				{/* Calling a data from setdata for showing */}
-				<p>{data.name}</p>
-				<p>{data.age}</p>
-				<p>{data.date}</p>
-				<p>{data.programming}</p>
-
-			</header>
         </div>
     )
 }

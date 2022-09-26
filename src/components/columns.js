@@ -9,22 +9,42 @@ export const COLUMNS = [
     },
     {
         Header: 'Bus',
-        accessor: 'bus'
+        accessor: 'bus_id'
     },
     {
         Header: 'Time Due',
-        accessor: 'time_due'
+        accessor: 's_time'
     },
     {
-        Header: 'Expected',
-        accessor: 'expected'
+        Header: 'Expected Time',
+        accessor: 'p_time'
     },
     {
-        Header: 'Recommended',
-        accessor: 'recommended'
+        Header: 'Expected Intervals (min)',
+        accessor: 'p_hw'
     },
     {
-        Header: 'Executed',
-        accessor: 'exectuted'
+        Header: 'Recommended Action (min)',
+        accessor: 'r_act'
+    },
+    {
+        Header: 'Recommended Time',
+        accessor: 'r_time'
+    },
+    {
+        Header: 'Recommended Intervals (min)',
+        accessor: 'r_hw'
+    },
+    {
+        Header: 'Executed Action (min)',
+        accessor: 'a_act'
+    },
+    {
+        Header: 'Executed Time',
+        accessor: 'a_time'
+    },
+    {
+        Header: 'Executed Intervals (min)',
+        accessor: 'a_hw'
     }
 ]
