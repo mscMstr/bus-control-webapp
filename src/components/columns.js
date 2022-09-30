@@ -4,27 +4,35 @@ export const COLUMNS = [
         accessor: 'run'
     },
     {
-        Header: 'Run Relief',
-        accessor: 'run_relief'
-    },
-    {
-        Header: 'Bus',
-        accessor: 'bus_id'
+        Header: "Trip",
+        accessor: "trip"
     },
     {
         Header: 'Time Due',
         accessor: 's_time'
     },
     {
-        Header: 'Expected Time',
+        Header: 'Run Relief',
+        accessor: 'run_relief'
+    },
+    {
+        Header: 'Bus ID',
+        accessor: 'bus_id'
+    },
+    {
+        Header: "Operator ID",
+        accessor: "op_id"
+    },
+    {
+        Header: 'Predicted Time',
         accessor: 'p_time'
     },
     {
-        Header: 'Expected Intervals (min)',
-        accessor: 'p_hw'
+        Header: 'Predicted Intervals (headway)',
+        accessor: 'p_hws'
     },
     {
-        Header: 'Recommended Action (min)',
+        Header: 'Recommended Holding',
         accessor: 'r_act'
     },
     {
@@ -33,18 +41,18 @@ export const COLUMNS = [
     },
     {
         Header: 'Recommended Intervals (min)',
-        accessor: 'r_hw'
+        accessor: 'r_hws'
     },
     {
-        Header: 'Executed Action (min)',
+        Header: 'Actual Holding (min)',
         accessor: 'a_act'
     },
     {
-        Header: 'Executed Time',
+        Header: 'Actual Time',
         accessor: 'a_time'
     },
     {
-        Header: 'Executed Intervals (min)',
-        accessor: 'a_hw'
+        Header: 'Actual Intervals (min)',
+        accessor: 'a_hws'
     }
 ]

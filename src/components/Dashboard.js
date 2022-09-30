@@ -2,7 +2,6 @@ import React from 'react';
 import { Table } from "./table";
 import Table2 from "./table2";
 import { ReactDOM } from 'react';
-import MOCK_DATA from './mock-data.json';
 import { useState, useEffect } from "react";
 import { Data } from "./tableData.js";
 
