@@ -10,6 +10,7 @@ h1 {
 
 h2 {
   color: #012d4f;
+  margin-top: 20px;
   margin-bottom: 10px;
   font-size: 35px;
 }
@@ -50,7 +51,7 @@ h4 {
   text-decoration: underline;
 }
 
-.register, .login, .login, .deploy, .mySensors, .historical {
+.register, .login, .login {
   max-width: 600px;
   margin: 0 auto;
   padding: 40px;

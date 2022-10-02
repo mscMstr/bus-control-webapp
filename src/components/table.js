@@ -3,11 +3,22 @@ import { useTable } from 'react-table';
 import DATA from './data/data.json';
 import { COLUMNS } from './columns';
 import './table.css';
+import DataTable from 'react';
 
 export const Table = () => {
 
     const columns = useMemo(() => COLUMNS, [])
     const data = useMemo(() => DATA, [])
+
+    const conditionalRowStyles = [
+        {
+          when: row => row.off = 1,
+          style: {
+            backgroundColor: 'gray',
+            color: 'red',
+          },
+        },
+      ];
 
     const table = useTable({
         columns: columns,
@@ -16,6 +27,7 @@ export const Table = () => {
 
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, } = table
 
+    
   return (
     <table {...getTableProps()}>
         <thead>

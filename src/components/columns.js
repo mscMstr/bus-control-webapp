@@ -4,24 +4,20 @@ export const COLUMNS = [
         accessor: 'run'
     },
     {
-        Header: "Trip",
-        accessor: "trip"
-    },
-    {
-        Header: 'Time Due',
-        accessor: 's_time'
-    },
-    {
-        Header: 'Run Relief',
-        accessor: 'run_relief'
-    },
-    {
         Header: 'Bus ID',
         accessor: 'bus_id'
     },
     {
         Header: "Operator ID",
         accessor: "op_id"
+    },
+    {
+        Header: "Time Due",
+        accessor: "s_time"
+    },
+    {
+        Header: "Scheduled Intervals (headway)",
+        accessor: "s_hws"
     },
     {
         Header: 'Predicted Time',
@@ -54,5 +50,9 @@ export const COLUMNS = [
     {
         Header: 'Actual Intervals (min)',
         accessor: 'a_hws'
+    },
+    {
+        Header: 'Off',
+        accessor: "off"
     }
 ]

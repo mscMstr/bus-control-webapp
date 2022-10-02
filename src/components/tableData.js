@@ -8,17 +8,18 @@ function Data() {
     ,{
       headers : { 
         'run' : 'Run',
-        'run_relief' : 'Run Relief',
         'bus_id' : 'Bus',
+        'op_id' : 'Operator ID',
         's_time' : 'Time Due',
-        'p_time' : 'Expected Time',
-        'p_hw' : 'Expected Intervals (min)',
-        'r_act' : 'Recommended Action (min)',
+        's_hws' : 'Scheduled Intervals (headway)',
+        'p_time' : 'Predicted Time',
+        'p_hw' : 'Predicted Intervals (headway)',
+        'r_act' : 'Recommended Holding',
         'r_time' : 'Recommended Time',
         'r_hw' : 'Recommended Intervals (min)',
-        'a_act' : 'Executed Action (min)',
-        'a_time' : 'Executed Time',
-        'a_hw' : 'Executed Intervals (min)'
+        'a_act' : 'Actual Holding (min)',
+        'a_time' : 'Actual Time',
+        'a_hw' : 'Actual Intervals (min)'
        }
     }
     )
