@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 import pandas as pd
 import config
 
-db_name = "real_time_dingyi"
+db_name = "real_time"
 table_name = "Jpk_RT_1002"
 
 q = f"""

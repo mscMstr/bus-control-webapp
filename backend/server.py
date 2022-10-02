@@ -12,10 +12,9 @@ app = Flask(__name__)
 t = pendulum.now('America/Chicago').replace(tzinfo=None)
 df = test.df_db
 df['t_diff'] = (pd.Timestamp(t) - df['s_time_dt']).abs()
-print(df.loc[0:4, ['s_time_dt', 't_diff']])
 idx_closest = df['t_diff'].argmin()
 df_display = df.iloc[idx_closest-5:idx_closest+5]
-data = df_display.to_json(path_or_buf='../bus-tool/src/components/data/data.json', orient='records')
+data = df_display.to_json(path_or_buf='../bus-control-webapp/src/components/data/data.json', orient='records')
 
 # Route for seeing data
 @app.route('/data', methods={'GET'})
