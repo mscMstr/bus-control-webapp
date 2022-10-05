@@ -2,7 +2,7 @@ import pandas as pd
 import config
 import pendulum
 
-db_name = "real_time"
+db_name = "real_time_joseph"
 date_str = pendulum.now('America/Chicago').strftime('%m%d')
 table_name = "Jpk_RT_" + date_str
 
