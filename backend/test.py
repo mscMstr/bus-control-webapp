@@ -1,11 +1,10 @@
-import mysql.connector
-from mysql.connector import errorcode
-from sqlalchemy import create_engine
 import pandas as pd
 import config
+import pendulum
 
 db_name = "real_time"
-table_name = "Jpk_RT_1002"
+date_str = pendulum.now('America/Chicago').strftime('%m%d')
+table_name = "Jpk_RT_" + date_str
 
 q = f"""
 SELECT *
