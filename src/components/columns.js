@@ -16,7 +16,7 @@ export const COLUMNS = [
         accessor: "s_time"
     },
     {
-        Header: "Scheduled Intervals (headway)",
+        Header: "Scheduled Intervals (min)",
         accessor: "s_hws"
     },
     {
@@ -24,8 +24,12 @@ export const COLUMNS = [
         accessor: 'p_time'
     },
     {
-        Header: 'Predicted Intervals (headway)',
+        Header: 'Predicted Intervals (min)',
         accessor: 'p_hws'
+    },
+    {
+        Header: 'Predicted Schedule Dev (min)',
+        accessor: 'p_dev'
     },
     {
         Header: 'Recommended Holding',
@@ -36,11 +40,15 @@ export const COLUMNS = [
         accessor: 'r_time'
     },
     {
-        Header: 'Recommended Intervals (min)',
+        Header: 'Recommended Intervals',
         accessor: 'r_hws'
     },
     {
-        Header: 'Actual Holding (min)',
+        Header: 'Recommended Schedule Dev (min)',
+        accessor: 'r_dev'
+    },
+    {
+        Header: 'Actual Holding',
         accessor: 'a_act'
     },
     {
@@ -48,8 +56,12 @@ export const COLUMNS = [
         accessor: 'a_time'
     },
     {
-        Header: 'Actual Intervals (min)',
+        Header: 'Actual Intervals',
         accessor: 'a_hws'
+    },
+    {
+        Header: 'Actual Schedule Dev',
+        accessor: 'a_dev'
     },
     {
         Header: 'Off',
