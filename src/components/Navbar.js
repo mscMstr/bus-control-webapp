@@ -12,8 +12,6 @@ const Navbar = ({ setToken }) => {
                 <Link to="/">Home</Link>
                 <Link>|</Link>
                 <Link to="/dashboard">Dashboard</Link>
-                <Link>|</Link>
-                <Link to="/login">Login</Link>
             </div>
         </nav>
     )
