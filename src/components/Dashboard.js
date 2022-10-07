@@ -12,7 +12,7 @@ const Dashboard = () => {
     
     return (
         <div>
-            <h2>Bus Trip Dashboard</h2>
+            <h2>Terminal Run Dashboard</h2>
             <Table />
         </div>
     )
