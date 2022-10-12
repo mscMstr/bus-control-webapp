@@ -8,63 +8,78 @@ export const COLUMNS = [
         accessor: 'bus_id'
     },
     {
-        Header: "Operator ID",
+        Header: "Op ID",
         accessor: "op_id"
+    },
+    {
+        Header: 'Off',
+        accessor: "off"
     },
     {
         Header: "Time Due",
         accessor: "s_time"
     },
     {
-        Header: "Scheduled Intervals (min)",
+        Header: "Sched. Intervals (min)",
         accessor: "s_hws"
     },
     {
-        Header: 'Predicted Time',
+        Header: 'Pred. Time',
         accessor: 'p_time'
     },
     {
-        Header: 'Predicted Intervals (min)',
+        Header: 'Pred. Intervals (min)',
         accessor: 'p_hws'
+    },    
+    {
+        Header: 'Pred. Board',
+        accessor: 'p_board'
     },
     {
-        Header: 'Predicted Schedule Dev (min)',
+        Header: 'Pred. Schedule Dev (min)',
         accessor: 'p_dev'
     },
     {
-        Header: 'Recommended Holding',
+        Header: 'Rec. Action',
         accessor: 'r_act'
     },
     {
-        Header: 'Recommended Time',
+        Header: 'Rec. Time',
         accessor: 'r_time'
     },
     {
-        Header: 'Recommended Intervals',
+        Header: 'Rec. Intervals (min)',
         accessor: 'r_hws'
     },
     {
-        Header: 'Recommended Schedule Dev (min)',
+        Header: 'Rec. Schedule Dev (min)',
         accessor: 'r_dev'
-    },
+    },    
     {
-        Header: 'Actual Holding',
+        Header: 'Rec. Board',
+        accessor: 'r_board'
+    },    
+    {
+        Header: 'Rec. RL Time',
+        accessor: 'rl_time'
+    },
+
+    {
+        Header: 'Act. Action',
         accessor: 'a_act'
-    },
+    },    
+
     {
-        Header: 'Actual Time',
+        Header: 'Act. Time',
         accessor: 'a_time'
     },
     {
-        Header: 'Actual Intervals',
+        Header: 'Act. Intervals (min)',
         accessor: 'a_hws'
     },
     {
-        Header: 'Actual Schedule Dev',
+        Header: 'Act. Schedule Dev (min)',
         accessor: 'a_dev'
     },
-    {
-        Header: 'Off',
-        accessor: "off"
-    }
+
 ]
