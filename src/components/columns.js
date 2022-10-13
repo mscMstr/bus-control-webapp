@@ -36,7 +36,7 @@ export const COLUMNS = [
         accessor: 'p_board'
     },
     {
-        Header: 'Pred. Schedule Dev (min)',
+        Header: 'Pred. Sched. Dev (min)',
         accessor: 'p_dev'
     },
     {
@@ -52,7 +52,7 @@ export const COLUMNS = [
         accessor: 'r_hws'
     },
     {
-        Header: 'Rec. Schedule Dev (min)',
+        Header: 'Rec. Sched. Dev (min)',
         accessor: 'r_dev'
     },    
     {
@@ -78,7 +78,7 @@ export const COLUMNS = [
         accessor: 'a_hws'
     },
     {
-        Header: 'Act. Schedule Dev (min)',
+        Header: 'Act. Sched. Dev (min)',
         accessor: 'a_dev'
     },
 
