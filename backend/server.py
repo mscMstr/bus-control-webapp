@@ -13,7 +13,7 @@ t = pendulum.now('America/Chicago').replace(tzinfo=None)
 df = test.df_db
 df['t_diff'] = (pd.Timestamp(t) - df['s_time_dt']).abs()
 idx_closest = df['t_diff'].argmin()
-df_display = df.iloc[idx_closest-5:idx_closest+5]
+df_display = df.iloc[idx_closest-6:idx_closest+5]
 
 # using global path so we can run this from terminal!
 dir_path = os.path.dirname(os.path.realpath(__file__))
