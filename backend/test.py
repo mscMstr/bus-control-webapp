@@ -13,4 +13,4 @@ FROM {db_name}.{table_name}
 
 df_db = pd.read_sql(q, config.instance_url + db_name)
 
-print ('fetched!')
+# print ('fetched!')
