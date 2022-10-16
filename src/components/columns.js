@@ -81,5 +81,9 @@ export const COLUMNS = [
         Header: 'Act. Sched. Dev (min)',
         accessor: 'a_dev'
     },
+    {
+        Header: 'Mid holding (min)',
+        accessor: 'mid_ht'
+    }
 
 ]

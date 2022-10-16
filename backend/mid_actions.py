@@ -9,8 +9,9 @@ import click
 @click.option('--t_due', prompt='Time due', help='int(3) or int(4)')
 @click.option('--hold_time',prompt='Hold time instructed', help='int(3) or int(4)')
 @click.option('--time_instr',prompt='Time at which instructed', help='int(3) or int(4)')
+@click.option('--verified',prompt='Verified?(1 if true 0 if no)', help='int(1)')
 
-def mid_actions(run_nr, t_due, hold_time, time_instr, name, dt_now=pendulum.now('America/Chicago').replace(tzinfo=None)):
+def mid_actions(run_nr, t_due, hold_time, time_instr, name, verified, dt_now=pendulum.now('America/Chicago').replace(tzinfo=None)):
     db_name = 'real_time_' + name
     table_name = 'Jpk_RT_' + dt_now.strftime('%m%d')
     q = f"""
