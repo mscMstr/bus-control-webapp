@@ -34,7 +34,10 @@ def run_status(run_nr, t_due, is_off, name, dt_now=pendulum.now('America/Chicago
         print('filling')
         df_db.loc[(df_db['run']==run_str) & (df_db.index==idx), 'off'] = 0
     print(df_db.loc[(df_db['run']==run_str) & (df_db.index==idx), ['run', 's_time', 'off']])
-    df_db.to_sql(table_name, con=config.instance_url + db_name, if_exists='replace', index=False)
+    if not df_db.empty:
+        df_db.to_sql(table_name, con=config.instance_url + db_name, if_exists='replace', index=False)
+    else:
+        print('produced empty dashboard. Did not refresh')
     return
 
 if __name__ == '__main__':

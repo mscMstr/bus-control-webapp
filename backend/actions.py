@@ -1,4 +1,3 @@
-from curses import newpad
 import config
 import pandas as pd
 import pendulum
@@ -60,8 +59,10 @@ def actions(run_nr, t_due, t_act, name, dt_now=pendulum.now('America/Chicago').r
         df_db.loc[idx_refresh, 'a_fhw'] = df_db.loc[idx_refresh, 's_fhw'].copy() - df_db.loc[idx_refresh, 'a_act'].copy()
         df_db.loc[idx_refresh, 'a_hws'] = df_db.loc[idx_refresh, 'a_hw'].astype(int).astype(str) + '/' + df_db.loc[idx_refresh, 'a_fhw'].astype(int).astype(str)
         df_db.loc[idx_refresh, 'a_dev'] = df_db.loc[idx_refresh, 'a_act'].copy()
-
-    df_db.to_sql(table_name, con=config.instance_url + db_name, if_exists='replace', index=False)
+    if not df_db.empty:
+        df_db.to_sql(table_name, con=config.instance_url + db_name, if_exists='replace', index=False)
+    else:
+        print('produced empty dashboard. Did not refresh')
     return 
     # return df_db
 

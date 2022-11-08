@@ -45,8 +45,10 @@ def mid_actions(run_nr, t_due, hold_time, time_instr, name, verified, dt_now=pen
 
     df_db.loc[idx_refresh, 't_mid_ht'] = pd.to_datetime(t_instr_str)
     df_db.loc[idx_refresh, 'mid_ht'] = hold_time
-
-    df_db.to_sql(table_name, con=config.instance_url + db_name, if_exists='replace', index=False)
+    if not df_db.empty:
+        df_db.to_sql(table_name, con=config.instance_url + db_name, if_exists='replace', index=False)
+    else:
+        print('produced empty dashboard. Did not refresh')
     return 
     # return df_db
 
