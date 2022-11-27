@@ -21,7 +21,12 @@ export const COLUMNS = [
     },
     {
         Header: 'Predicted Time',
-        accessor: 'p_time'
+        accessor: 'p_time',
+        Cell: row => {
+            row.styles['color'] = '#fff';
+            row.styles['backgroundColor'] = 'green';
+            return row.value.toUpperCase();
+          }
     },
     {
         Header: 'Predicted Intervals (min)',
