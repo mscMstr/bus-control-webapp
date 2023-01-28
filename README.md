@@ -32,7 +32,7 @@ Written in Python using a Flask framework. Contained within the backend folder. 
 
 In order to run python scripts:
 
-- installations
+- installations (using pip, if other installer modify)
 
     ```pip install flask```
 
