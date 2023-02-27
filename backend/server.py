@@ -26,7 +26,6 @@ data = df_display.to_json(path_or_buf=pth_data, orient='records')
 @app.route('/data', methods={'GET'})
 def returnJSON():
     return data
-
       
 # Runs app
 if __name__ == '__main__':
