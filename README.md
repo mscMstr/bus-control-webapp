@@ -34,13 +34,17 @@ In order to run python scripts:
 
 - installations (using pip, if other installer modify)
 
-    ```pip install flask```
+    ```pip3 install flask```
 
-    ```pip install pandas```
+    ```pip3 install pandas```
 
-    ```pip install mysql-connector-python```
+    ```pip3 install mysql-connector-python```
 
-    ```pip install sqlalchemy```
+    ```pip3 install sqlalchemy```
+    
+    ```pip3 install pendulum```
+    
+    also make sure to have python3 installed, since python scripts are being written and run
 
 - run script
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const Home = () => {
+
   return (
     <div className="home">
       <h2>Bus Control Tool</h2>

@@ -1,94 +1,90 @@
+
 export const COLUMNS = [
     {
         Header: 'Run',
-        accessor: 'run'
+        accessor: 'run',
     },
     {
         Header: 'Bus ID',
-        accessor: 'bus_id'
+        accessor: 'bus_id',
     },
     {
         Header: "Op ID",
-        accessor: "op_id"
+        accessor: "op_id",
     },
     {
         Header: 'Off',
-        accessor: "off"
+        accessor: "off",
     },
     {
         Header: "Time Due",
-        accessor: "s_time"
+        accessor: "s_time",
     },
     {
         Header: "Sched. Intervals (min)",
-        accessor: "s_hws"
+        accessor: "s_hws",
     },
     {
         Header: 'Predicted Time',
         accessor: 'p_time',
-        Cell: row => {
-            row.styles['color'] = '#fff';
-            row.styles['backgroundColor'] = 'green';
-            return row.value.toUpperCase();
-          }
     },
     {
         Header: 'Pred. Intervals (min)',
-        accessor: 'p_hws'
+        accessor: 'p_hws',
     },    
     {
         Header: 'Pred. Board',
-        accessor: 'p_board'
+        accessor: 'p_board',
     },
     {
         Header: 'Pred. Sched. Dev (min)',
-        accessor: 'p_dev'
+        accessor: 'p_dev',
     },
     {
         Header: 'Rec. Action',
-        accessor: 'r_act'
+        accessor: 'r_act',
     },
     {
         Header: 'Rec. Time',
-        accessor: 'r_time'
+        accessor: 'r_time',
     },
     {
         Header: 'Rec. Intervals (min)',
-        accessor: 'r_hws'
+        accessor: 'r_hws',
     },
     {
         Header: 'Rec. Sched. Dev (min)',
-        accessor: 'r_dev'
+        accessor: 'r_dev',
     },    
     {
         Header: 'Rec. Board',
-        accessor: 'r_board'
+        accessor: 'r_board',
     },    
     {
         Header: 'Rec. RL Time',
-        accessor: 'rl_time'
+        accessor: 'rl_time',
     },
 
     {
         Header: 'Act. Action',
-        accessor: 'a_act'
+        accessor: 'a_act',
     },    
 
     {
         Header: 'Act. Time',
-        accessor: 'a_time'
+        accessor: 'a_time',
     },
     {
         Header: 'Act. Intervals (min)',
-        accessor: 'a_hws'
+        accessor: 'a_hws',
     },
     {
         Header: 'Act. Sched. Dev (min)',
-        accessor: 'a_dev'
+        accessor: 'a_dev',
     },
     {
         Header: 'Mid holding (min)',
-        accessor: 'mid_ht'
+        accessor: 'mid_ht',
     }
 
 ]
