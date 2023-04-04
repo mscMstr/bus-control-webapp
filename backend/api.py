@@ -22,8 +22,7 @@ def getBusInfo():
 
 #@app.route('/edit', methods=['PUT'])
 def toggleOff():
-    #key = request.args.get('trip')
-    key = 23562020
+    key = request.args.get('trip')
 
     # connect to db table - but file for now
     with open('src/components/data/data.json', 'r') as f:
