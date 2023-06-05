@@ -4,6 +4,7 @@ import DATA from './data/data.json';
 import { COLUMNS } from './columns';
 import './table.css';
 import DataTable from 'react';
+import tableData from './tableData.js'
 import Modal from "./Modal"
 
 export const Table = () => {
@@ -28,10 +29,19 @@ export const Table = () => {
 
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, } = table
 
+    const [selectedRowData, setSelectedRowData] = useState([]);
+
+    const getSelectedRowValues = selectedRow => {
+        setSelectedRowData({ ...selectedRow.values });
+        console.log({ ...selectedRow.values });
+    };
+
     const [openModal, setOpenModal] = useState(false);
+    const id = (selectedRowData["run"])
     
   return (
     <div className="table">
+        {openModal && <Modal closeModal={setOpenModal} run={id} rowData={selectedRowData} />}
         <table {...getTableProps()}>
             <thead>
                 {headerGroups.map((headerGroup) => (
@@ -47,7 +57,8 @@ export const Table = () => {
                     rows.map(row => {
                         prepareRow(row)
                         return (
-                            <tr onClick={() => setOpenModal(true)} {...row.getRowProps()}>
+                            //<tr onClick={() => {setOpenModal(true); setRow(row.getRowProps().cells.map);}} {...row.getRowProps()}>
+                            <tr {...row.getRowProps()} onClick={() => {getSelectedRowValues(row); setOpenModal(true)}}>
                                 {row.cells.map( cell => {
                                     return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
                                 })}
@@ -57,7 +68,7 @@ export const Table = () => {
                 }
             </tbody>
         </table>
-        {openModal && <Modal closeModal={setOpenModal} />}
+        
     </div>
   )
 }
