@@ -27,7 +27,7 @@ export const COLUMNS = [
     {
         Header: 'Predicted Time',
         accessor: 'p_time',
-    },
+    }
     // {
     //     Header: 'Pred. Intervals (min)',
     //     accessor: 'p_hws',
@@ -44,10 +44,10 @@ export const COLUMNS = [
     //     Header: 'Rec. Action',
     //     accessor: 'r_act',
     // },
-    {
-        Header: 'Rec. Time',
-        accessor: 'r_time',
-    }
+    // {
+    //     Header: 'Rec. Time',
+    //     accessor: 'r_time',
+    // }
     // {
     //     Header: 'Rec. Intervals (min)',
     //     accessor: 'r_hws',
