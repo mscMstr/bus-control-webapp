@@ -56,7 +56,7 @@ function Modal(props) {
                     </div>
                 </div>
                 <div className="footer">
-                    <button onClick={() => props.closeModal(false)}>done</button>
+                    <button onClick={() => props.closeModal(false)}>Done</button>
                 </div>
             </div>
         </div>
