@@ -9,7 +9,7 @@ table {
     padding: 8px;
   }
   
-  table tr:nth-child(even){background-color: #f2f2f2;}
+  table tr:nth-child(even){background-color: #e0ffff;}
   
   table tr:hover {background-color: #ddd;}
   
@@ -17,6 +17,6 @@ table {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: #00589b;
+    background-color: #008b8b;
     color: white;
   }
