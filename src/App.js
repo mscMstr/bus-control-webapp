@@ -21,9 +21,9 @@ function App() {
           <Navbar />
           <div className='content'>
             <Routes>
-              <Route path={"/"} element={<Home />}></Route>
-              <Route path={"/dashboard"} element={<Dashboard />}></Route>
-              <Route path={"/Login"} element={<Login />}> </Route>
+              <Route path={"/bus-control-webapp/"} element={<Home />}></Route>
+              <Route path={"/bus-control-webapp/dashboard"} element={<Dashboard />}></Route>
+              <Route path={"/bus-control-webapp/Login"} element={<Login />}> </Route>
             </Routes>
           </div>
         </div>
