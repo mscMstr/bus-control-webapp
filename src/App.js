@@ -20,11 +20,11 @@ function App() {
         <div className="App">
           <Navbar />
           <div className='content'>
-            <Routes>
-              <Route path={"/bus-control-webapp/"} element={<Home />}></Route>
-              <Route path={"/bus-control-webapp/dashboard"} element={<Dashboard />}></Route>
-              <Route path={"/bus-control-webapp/Login"} element={<Login />}> </Route>
-            </Routes>
+            <Switch>
+              <Route exact path={"/"} element={<Home />}></Route>
+              <Route path={"/dashboard"} element={<Dashboard />}></Route>
+              <Route path={"/login"} element={<Login />}> </Route>
+            </Switch>
           </div>
         </div>
       </Router>
