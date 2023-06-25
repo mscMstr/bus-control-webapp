@@ -1,35 +1,42 @@
 import React, { useState, useEffect } from "react"
 import "./modal.css"
+import DATA from './data/data.json';
 
 function Modal(props) {
 
     const run = (props.rowData["run"])
     const op_id = (props.rowData["op_id"])
     const bus_id = (props.rowData["bus_id"])
-    const r_time = (props.rowData["r_time"]) // TO DO: It's not showing UP
-    const [data, setData] = useState(null)
+    const [data, setData] = useState([])
     const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(run)
-    const dataUrl = "http://127.0.0.1:5000/bus/data".concat(run)
+    // const dataUrl = "http://127.0.0.1:5000/bus/data/".concat(run)
+    
+    useEffect(() => {
+        DATA.map(bus => (
+            //console.log(bus.run);
+            bus.run == run 
+                ? setData(bus)
+                : null
+        ))
+    }, []);
 
     const [toggleOff, setToggleOff] = useState(false) 
     
     useEffect(() => {
-        // Using fetch to fetch the api from 
-        // flask server it will be redirected to proxy
         fetch(toggleUrl)
             .then(response => {
                 response.json()
             })
     }, [toggleOff]);
 
-    useEffect(() => {
-        fetch(dataUrl)
-            .then(response => {
-                response.json()
-            })
-            .then(data => setData(data))
-        console.log(data)
-    }, [])
+    // useEffect(() => {
+    //     fetch(dataUrl)
+    //         .then(response => {
+    //             response.json()
+    //         })
+    //         .then(data => setData(data))
+    //     console.log(JSON.stringify(data))
+    // }, [])
 
     return (
         <div className="modalBackground">
@@ -43,11 +50,11 @@ function Modal(props) {
                 <div className="body">
                     <div className="bodySection">
                         <ul>
-                            <li>Predicted departure: {r_time}</li>
-                            <li>Recomended departure: {props.rowData["a_time"]}</li>
-                            <li>Intervals as scheduled: {props.rowData["s_hws"]}</li>
-                            <li>Intervals as predicted: {props.rowData["p_hws"]}</li>
-                            <li>Intervals as recommended: {props.rowData["r_hws"]}</li>
+                            <li>Predicted departure: {data.r_time}</li>
+                            <li>Recomended departure: {data.a_time}</li>
+                            <li>Intervals as scheduled: {data.s_hws}</li>
+                            <li>Intervals as predicted: {data.p_hws}</li>
+                            <li>Intervals as recommended: {data.r_hws}</li>
                         </ul>
                     </div>
                     <div className="bodySection">
