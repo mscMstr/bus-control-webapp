@@ -2,9 +2,9 @@ import logo from './logo.svg';
 import { Table } from './components/table'
 import { Route, Routes, HashRouter as Router} from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./Home";
-import Login from "./Login";
-import Dashboard from "./components/Dashboard";
+import Home from "./routes/Home";
+import Login from "./routes/Login";
+import Dashboard from "./routes/Dashboard";
 import React, { useState, useEffect } from "react";
 import './App.css';
 
@@ -15,7 +15,7 @@ function App() {
 
 	return (
 		<div className="App">
-      <Router>
+      <>
         <div className="App">
           <Navbar />
           <div className='content'>
@@ -26,7 +26,7 @@ function App() {
             </Switch>
           </div>
         </div>
-      </Router>
+      </>
 		</div>
 	);
 }
