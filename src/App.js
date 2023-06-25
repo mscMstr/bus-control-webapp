@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import { Table } from './components/table'
-import { BrowserRouter, Route, Routes, HashRouter as Router} from "react-router-dom";
+import { Route, Routes, HashRouter as Router} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./Home";
 import Login from "./Login";
@@ -15,7 +15,7 @@ function App() {
 
 	return (
 		<div className="App">
-      <Router>
+      <Router basename=”/”>
         <div className="App">
           <Navbar />
           <div className='content'>
