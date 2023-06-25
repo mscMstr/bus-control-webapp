@@ -1,12 +1,11 @@
 import logo from './logo.svg';
 import { Table } from './components/table'
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, HashRouter as Router} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./Home";
 import Login from "./Login";
 import Dashboard from "./components/Dashboard";
 import React, { useState, useEffect } from "react";
-import { HashRouter } from "react-router-dom";
 import './App.css';
 
 /*const API = 'https://hn.algolia.com/api/v1/search?query=';
