@@ -1,9 +1,8 @@
 import React from 'react';
-import { Table } from "./table";
-import Table2 from "./table2";
+import { Table } from "../components/table";
 import { ReactDOM } from 'react';
 import { useState, useEffect } from "react";
-import { Data } from "./tableData.js";
+import { Data } from "../components/tableData.js";
 
 const Dashboard = () => {
     /*const root = ReactDOM.createRoot(document.getElementById("root"));

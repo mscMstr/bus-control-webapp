@@ -33,7 +33,6 @@ export const Table = () => {
 
     const getSelectedRowValues = selectedRow => {
         setSelectedRowData({ ...selectedRow.values });
-        console.log({ ...selectedRow.values });
     };
 
     const [openModal, setOpenModal] = useState(false);

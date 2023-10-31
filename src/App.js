@@ -1,12 +1,11 @@
 import logo from './logo.svg';
 import { Table } from './components/table'
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes, HashRouter as Router} from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./Home";
-import Login from "./Login";
-import Dashboard from "./components/Dashboard";
+import Home from "./routes/Home";
+import Login from "./routes/Login";
+import Dashboard from "./routes/Dashboard";
 import React, { useState, useEffect } from "react";
-import { HashRouter } from "react-router-dom";
 import './App.css';
 
 /*const API = 'https://hn.algolia.com/api/v1/search?query=';
@@ -16,7 +15,7 @@ function App() {
 
 	return (
 		<div className="App">
-      <Router>
+      <>
         <div className="App">
           <Navbar />
           <div className='content'>
@@ -27,7 +26,7 @@ function App() {
             </Routes>
           </div>
         </div>
-      </Router>
+      </>
 		</div>
 	);
 }
