@@ -9,7 +9,7 @@ function Modal(props) {
     const r_time = (props.rowData["r_time"]) // TO DO: It's not showing UP
     const [data, setData] = useState(null)
     const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(run)
-    const dataUrl = "http://127.0.0.1:5000/bus/data".concat(run)
+    const dataUrl = "http://127.0.0.1:5000/bus/".concat(run)
 
     const [toggleOff, setToggleOff] = useState(false) 
     
@@ -20,7 +20,7 @@ function Modal(props) {
             .then(response => {
                 response.json()
             })
-    }, [toggleOff]);
+    }, [toggleOff, toggleUrl]);
 
     useEffect(() => {
         fetch(dataUrl)
@@ -29,7 +29,7 @@ function Modal(props) {
             })
             .then(data => setData(data))
         console.log(data)
-    }, [])
+    }, [data, dataUrl])
 
     return (
         <div className="modalBackground">

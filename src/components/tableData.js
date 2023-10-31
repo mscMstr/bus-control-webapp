@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 
 function Data() {
     const [data,setData]=useState([]);
+    const dataUrl = 'http://127.0.0.1:5000/bus/all';
   const getData=()=>{
-    fetch('http://127.0.0.1:5000/data'
+    fetch('http://127.0.0.1:5000/bus/all'
     ,{
       headers : { 
         'run' : 'Run',
@@ -32,6 +33,14 @@ function Data() {
         setData(myJson)
       });
   }
+  useEffect(() => {
+    // Using fetch to fetch the api from 
+    // flask server it will be redirected to proxy
+    fetch(dataUrl)
+        .then(response => {
+            response.json()
+        })
+}, [data, dataUrl]);
   useEffect(()=>{
     getData()
   },[])
