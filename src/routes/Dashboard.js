@@ -11,7 +11,7 @@ const Dashboard = () => {
     
     return (
         <div>
-            <h2>Departure Dashboard</h2>
+            <h2>Navy Pier Runs</h2>
             <Table />
         </div>
     )
