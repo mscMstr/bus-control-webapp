@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/bus-control-webapp/static/css/main.4c2a672b.css",
-    "main.js": "/bus-control-webapp/static/js/main.53a3b029.js",
+    "main.css": "/bus-control-webapp/static/css/main.36e3e9b6.css",
+    "main.js": "/bus-control-webapp/static/js/main.ebba4784.js",
     "static/js/787.12d37bb1.chunk.js": "/bus-control-webapp/static/js/787.12d37bb1.chunk.js",
+    "static/media/neu.png": "/bus-control-webapp/static/media/neu.49d9311d92b1ed5762b1.png",
+    "static/media/mit.png": "/bus-control-webapp/static/media/mit.6bd32666235d26044765.png",
+    "static/media/cta.png": "/bus-control-webapp/static/media/cta.4bf38c3e1dcea4c33b27.png",
     "static/media/logo.svg": "/bus-control-webapp/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/bus-control-webapp/index.html",
-    "main.4c2a672b.css.map": "/bus-control-webapp/static/css/main.4c2a672b.css.map",
-    "main.53a3b029.js.map": "/bus-control-webapp/static/js/main.53a3b029.js.map",
+    "main.36e3e9b6.css.map": "/bus-control-webapp/static/css/main.36e3e9b6.css.map",
+    "main.ebba4784.js.map": "/bus-control-webapp/static/js/main.ebba4784.js.map",
     "787.12d37bb1.chunk.js.map": "/bus-control-webapp/static/js/787.12d37bb1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c2a672b.css",
-    "static/js/main.53a3b029.js"
+    "static/css/main.36e3e9b6.css",
+    "static/js/main.ebba4784.js"
   ]
 }
