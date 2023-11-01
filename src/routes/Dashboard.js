@@ -1,20 +1,61 @@
 import React from 'react';
-import { Table } from "../components/table";
+import { TableNavyPier, TableRed, TableBrown, TableBlue } from "../components/tables";
 import { ReactDOM } from 'react';
 import { useState, useEffect } from "react";
 import { Data } from "../components/tableData.js";
 
-const Dashboard = () => {
+export const DashboardNavyPier = () => {
+    /*const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<Table2 />)*/
+    
+    
+    return (
+        <div>
+            <h2>Navy Pier Runs</h2>
+            <TableNavyPier />
+        </div>
+    )
+}
+
+
+export const DashboardRed = () => {
     /*const root = ReactDOM.createRoot(document.getElementById("root"));
     root.render(<Table2 />)*/
 
     
     return (
         <div>
-            <h2>Navy Pier Runs</h2>
-            <Table />
+            <h2>Chicago & State (Red Line) Runs</h2>
+            <TableRed />
         </div>
     )
 }
 
-export default Dashboard;
+export const DashboardBrown = () => {
+    /*const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<Table2 />)*/
+
+    
+    return (
+        <div>
+            <h2>Chicago & Franklin (Brown Line) Runs</h2>
+            <TableBrown />
+        </div>
+    )
+}
+
+
+export const DashboardBlue = () => {
+    /*const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<Table2 />)*/
+
+    
+    return (
+        <div>
+            <h2>Chicago & Milwaukee (Blue Line) Runs</h2>
+            <TableBlue />
+        </div>
+    )
+}
+
+

@@ -40,21 +40,19 @@ function Data() {
         'rec_blue' : 'Rec. Adjustment',
         'ebus': 'E-bus',
         'sh_np': 'Schd. Headway',
-        'h_msg_np': 'Front Status',
         'h_msg_red': 'Front Status',
         'h_msg_brown': 'Front Status',
         'h_msg_blue': 'Front Status',
-        'fh_msg_np': 'Back Status',
         'fh_msg_red': 'Back Status',
         'fh_msg_brown': 'Back Status',
         'fh_msg_blue': 'Back Status',
         'confirm_np': 'Confirmed',
-        'confirm_red': 'Confirmed',
         'confirm_brown': 'Confirmed',
         'confirm_blue': 'Confirmed',
         'pattern': 'Destination',
         'recovery': 'Recovery',
-        'relieved': 'In Relief'
+        'relieved': 'In Relief',
+        'on': 'On-schedule'
        }
     }
     )

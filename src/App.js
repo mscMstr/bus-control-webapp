@@ -1,10 +1,10 @@
 import logo from './logo.svg';
-import { Table } from './components/table'
+import { Table } from './components/tableNavyPier'
 import { Route, Routes, HashRouter as Router} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./routes/Home";
 import Login from "./routes/Login";
-import Dashboard from "./routes/Dashboard";
+import { DashboardNavyPier, DashboardRed, DashboardBrown, DashboardBlue} from "./routes/Dashboard";
 import React, { useState, useEffect } from "react";
 import './App.css';
 
@@ -21,7 +21,10 @@ function App() {
           <div className='content'>
             <Routes>
               <Route exact path={"/"} element={<Home />}></Route>
-              <Route path={"/dashboard"} element={<Dashboard />}></Route>
+              <Route path={"/dashboardNavyPier"} element={<DashboardNavyPier />}></Route>
+              <Route path={"/dashboardRed"} element={<DashboardRed />}></Route>
+              <Route path={"/dashboardBrown"} element={<DashboardBrown />}></Route>
+              <Route path={"/dashboardBlue"} element={<DashboardBlue />}></Route>
               <Route path={"/login"} element={<Login />}> </Route>
             </Routes>
           </div>
