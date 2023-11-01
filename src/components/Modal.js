@@ -4,30 +4,38 @@ import DATA from './data/data.json';
 
 function Modal(props) {
 
-    const run = (props.rowData["run"])
-    const op_id = (props.rowData["op_id"])
-    const bus_id = (props.rowData["bus_id"])
+    const rid = (props.rowData["rid"])
+    const oid = (props.rowData["oid"])
+    const vid = (props.rowData["vid"])
     const [data, setData] = useState([])
     const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(run)
-    const dataUrl = "http://127.0.0.1:5000/bus/".concat(run)
+    // const dataUrl = "http://127.0.0.1:5000/bus/".concat(run)
 
     const [toggleOff, setToggleOff] = useState(false) 
-    
-    useEffect(() => {
-        fetch(toggleUrl)
-            .then(response => {
-                response.json()
-            })
-    }, [toggleOff, toggleUrl]);
 
     useEffect(() => {
-        fetch(dataUrl)
-            .then(response => {
-                response.json()
-            })
-            .then(data => setData(data))
-        console.log(data)
-    }, [data, dataUrl])
+        DATA.map(bus => (
+            //console.log(bus.run);
+            bus.run == run 
+                ? setData(bus)
+                : null
+        ))
+    }, []);
+    // useEffect(() => {
+    //     fetch(toggleUrl)
+    //         .then(response => {
+    //             response.json()
+    //         })
+    // }, [toggleOff, toggleUrl]);
+
+    // useEffect(() => {
+    //     fetch(dataUrl)
+    //         .then(response => {
+    //             response.json()
+    //         })
+    //         .then(data => setData(data))
+    //     console.log(data)
+    // }, [data, dataUrl])
 
     return (
         <div className="modalBackground">
@@ -36,16 +44,17 @@ function Modal(props) {
                     <button onClick={() => props.closeModal(false)}> x </button>
                 </div>
                 <div className="title">
-                    <h1>Run {props.run} Bus {bus_id} Operator {op_id}</h1>
+                    <h1>Run {rid} Bus {vid} Operator {oid}</h1>
                 </div>
                 <div className="body">
                     <div className="bodySection">
                         <ul>
-                            <li>Predicted departure: {data.r_time}</li>
-                            <li>Recomended departure: {data.a_time}</li>
-                            <li>Intervals as scheduled: {data.s_hws}</li>
-                            <li>Intervals as predicted: {data.p_hws}</li>
-                            <li>Intervals as recommended: {data.r_hws}</li>
+                            <li>in relief: {data.relieved}</li>
+                            <li>destination: {data.pattern}</li>
+                            <li>ebus?: {data.ebus}</li>
+                            <li>schd. hw: {data.sh_np}</li>
+                            <li>pred. hw: {data.h_np}</li>
+                            <li>pred. next_hw: {data.fh_np}</li>
                         </ul>
                     </div>
                     <div className="bodySection">

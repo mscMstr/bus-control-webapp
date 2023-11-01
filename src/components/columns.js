@@ -2,89 +2,30 @@
 export const COLUMNS = [
     {
         Header: 'Run',
-        accessor: 'run',
+        accessor: 'rid',
     },
     {
         Header: 'Bus ID',
-        accessor: 'bus_id',
+        accessor: 'vid',
     },
     {
-        Header: "Op ID",
-        accessor: "op_id",
+        Header: "Destination",
+        accessor: "pattern",
     },
     {
-        Header: 'Missing',
-        accessor: "off",
+        Header: 'Schd. Departure',
+        accessor: "schdtm_np",
     },
     {
-        Header: "Time Due",
-        accessor: "s_time",
+        Header: "Prd. Departure",
+        accessor: "prddtm_np",
     },
-    // {
-    //     Header: "Sched. Intervals (min)",
-    //     accessor: "s_hws",
-    // },
     {
-        Header: 'Predicted Time',
-        accessor: 'p_time',
+        Header: 'Schd. Deviation',
+        accessor: 'd_np',
+    },
+    {
+        Header: "Rec. Adjustment",
+        accessor: "rec_np"
     }
-    // {
-    //     Header: 'Pred. Intervals (min)',
-    //     accessor: 'p_hws',
-    // },    
-    // {
-    //     Header: 'Pred. Board',
-    //     accessor: 'p_board',
-    // },
-    // {
-    //     Header: 'Pred. Sched. Dev (min)',
-    //     accessor: 'p_dev',
-    // },
-    // {
-    //     Header: 'Rec. Action',
-    //     accessor: 'r_act',
-    // },
-    // {
-    //     Header: 'Rec. Time',
-    //     accessor: 'r_time',
-    // }
-    // {
-    //     Header: 'Rec. Intervals (min)',
-    //     accessor: 'r_hws',
-    // },
-    // {
-    //     Header: 'Rec. Sched. Dev (min)',
-    //     accessor: 'r_dev',
-    // },    
-    // {
-    //     Header: 'Rec. Board',
-    //     accessor: 'r_board',
-    // },    
-    // {
-    //     Header: 'Rec. RL Time',
-    //     accessor: 'rl_time',
-    // },
-
-    // {
-    //     Header: 'Act. Action',
-    //     accessor: 'a_act',
-    // },    
-
-    // {
-    //     Header: 'Act. Time',
-    //     accessor: 'a_time',
-    // },
-    // {
-    //     Header: 'Act. Intervals (min)',
-    //     accessor: 'a_hws',
-    // },
-    // {
-    //     Header: 'Act. Sched. Dev (min)',
-    //     accessor: 'a_dev',
-    // },
-    // {
-    //     Header: 'Mid holding (min)',
-    //     accessor: 'mid_ht',
-    // }
-
 ]
