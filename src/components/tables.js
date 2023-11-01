@@ -4,7 +4,7 @@ import DATA from './data/data.json';
 import { COLUMNS_NAVY_PIER, COLUMNS_RED, COLUMNS_BROWN, COLUMNS_BLUE } from './columns';
 import './table.css';
 import DataTable from 'react';
-import tableData from './tableData.js'
+// import tableData from './tableData.js'
 import {ModalNavyPier, ModalRed, ModalBrown, ModalBlue} from "./Modal"
 
 export const TableNavyPier = () => {

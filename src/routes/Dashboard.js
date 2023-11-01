@@ -2,7 +2,7 @@ import React from 'react';
 import { TableNavyPier, TableRed, TableBrown, TableBlue } from "../components/tables";
 import { ReactDOM } from 'react';
 import { useState, useEffect } from "react";
-import { Data } from "../components/tableData.js";
+// import { Data } from "../components/tableData.js";
 
 export const DashboardNavyPier = () => {
     /*const root = ReactDOM.createRoot(document.getElementById("root"));

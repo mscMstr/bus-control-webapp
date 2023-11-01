@@ -8,15 +8,15 @@ export function ModalNavyPier(props) {
     const oid = (props.rowData["oid"])
     const vid = (props.rowData["vid"])
     const [data, setData] = useState([])
-    const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(run)
-    const dataUrl = "http://127.0.0.1:5000/bus/".concat(run)
+    const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(rid)
+    const dataUrl = "http://127.0.0.1:5000/bus/".concat(rid)
 
     const [toggleOff, setToggleOff] = useState(false) 
 
     useEffect(() => {
         DATA.map(bus => (
             //console.log(bus.run);
-            bus.run == run 
+            bus.rid == rid 
                 ? setData(bus)
                 : null
         ))
@@ -80,15 +80,15 @@ export function ModalRed(props) {
     const oid = (props.rowData["oid"])
     const vid = (props.rowData["vid"])
     const [data, setData] = useState([])
-    const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(run)
-    const dataUrl = "http://127.0.0.1:5000/bus/".concat(run)
+    const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(rid)
+    const dataUrl = "http://127.0.0.1:5000/bus/".concat(rid)
 
     const [toggleOff, setToggleOff] = useState(false) 
 
     useEffect(() => {
         DATA.map(bus => (
             //console.log(bus.run);
-            bus.run == run 
+            bus.rid == rid 
                 ? setData(bus)
                 : null
         ))
@@ -146,15 +146,15 @@ export function ModalBrown(props) {
     const oid = (props.rowData["oid"])
     const vid = (props.rowData["vid"])
     const [data, setData] = useState([])
-    const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(run)
-    const dataUrl = "http://127.0.0.1:5000/bus/".concat(run)
+    const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(rid)
+    const dataUrl = "http://127.0.0.1:5000/bus/".concat(rid)
 
     const [toggleOff, setToggleOff] = useState(false) 
 
     useEffect(() => {
         DATA.map(bus => (
             //console.log(bus.run);
-            bus.run == run 
+            bus.rid == rid 
                 ? setData(bus)
                 : null
         ))
@@ -212,15 +212,15 @@ export function ModalBlue(props) {
     const oid = (props.rowData["oid"])
     const vid = (props.rowData["vid"])
     const [data, setData] = useState([])
-    const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(run)
-    const dataUrl = "http://127.0.0.1:5000/bus/".concat(run)
+    const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(rid)
+    const dataUrl = "http://127.0.0.1:5000/bus/".concat(rid)
 
     const [toggleOff, setToggleOff] = useState(false) 
 
     useEffect(() => {
         DATA.map(bus => (
             //console.log(bus.run);
-            bus.run == run 
+            bus.rid == rid 
                 ? setData(bus)
                 : null
         ))

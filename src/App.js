@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import { Table } from './components/tableNavyPier'
+// import { Table } from './components/tableNavyPier'
 import { Route, Routes, HashRouter as Router} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./routes/Home";
