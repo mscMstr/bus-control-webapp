@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/bus-control-webapp/static/css/main.5702e7ed.css",
-    "main.js": "/bus-control-webapp/static/js/main.f692c666.js",
+    "main.js": "/bus-control-webapp/static/js/main.f11f43c1.js",
     "static/js/787.12d37bb1.chunk.js": "/bus-control-webapp/static/js/787.12d37bb1.chunk.js",
     "static/media/logo.svg": "/bus-control-webapp/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/bus-control-webapp/index.html",
     "main.5702e7ed.css.map": "/bus-control-webapp/static/css/main.5702e7ed.css.map",
-    "main.f692c666.js.map": "/bus-control-webapp/static/js/main.f692c666.js.map",
+    "main.f11f43c1.js.map": "/bus-control-webapp/static/js/main.f11f43c1.js.map",
     "787.12d37bb1.chunk.js.map": "/bus-control-webapp/static/js/787.12d37bb1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5702e7ed.css",
-    "static/js/main.f692c666.js"
+    "static/js/main.f11f43c1.js"
   ]
 }
