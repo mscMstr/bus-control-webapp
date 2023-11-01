@@ -49,20 +49,24 @@ export function ModalNavyPier(props) {
                 <div className="body">
                     <div className="bodySection">
                         <ul>
-                            <li>arrives in: {data.prdatm_np}</li>
-                            <li>normal departure: {data.schdtm_np}</li>
-                            <li>in relief: {data.relieved}</li>
-                            <li>ebus?: {data.ebus}</li>
-                            <li>normal headway: {data.sh_np}</li>
-                            <li>pred. headway: {data.h_np}</li>
-                            <li>pred. next_headway: {data.fh_np}</li>
-                            <li>hold/move up by: {data.rec_np}</li>
-                            <li>confirmed: {data.confirm_np}</li>
+                            <li><strong>arrives in:</strong> {data.prdatm_np}</li>
+                            {/* <li>normal departure: {data.schdtm_np}</li> */}
+                            <li><strong>in relief:</strong> {data.relieved}</li>
+                            <li><strong>ebus?:</strong>  {data.ebus}</li>
+                            <li><strong>normal headway:</strong>  {data.sh_np}</li>
+                            <li><strong>pred. headway:</strong>  {data.h_np}</li>
+                            <li><strong>pred. next headway:</strong>  {data.fh_np}</li>
+                            <li><strong>hold/move up by:</strong>  {data.rec_np}</li>
+                            <li><strong>confirmed:</strong>  {data.confirm_np}</li>
                         </ul>
                     </div>
                     <div className="bodySection">
-                        <p className="buttonTitle">fill-cancel</p>
-                        <button onClick={() => setToggleOff(!toggleOff)}>toggle</button>
+                        {/* <p className="buttonTitle"></p> */}
+                        <button onClick={() => setToggleOff(!toggleOff)}>confirm</button>
+                    <div className="bodySection">
+                        {/* <p className="buttonTitle"></p> */}
+                        <button onClick={() => setToggleOff(!toggleOff)}>fill/cancel</button>
+                    </div>
                     </div>
                 </div>
                 <div className="footer">
@@ -121,15 +125,15 @@ export function ModalRed(props) {
                 <div className="body">
                     <div className="bodySection">
                         <ul>
-                            <li>in relief: {data.relieved}</li>
-                            <li>normal headway: {data.sh_np}</li>
-                            <li>hold back: {data.rec_red}</li>
-                            <li>confirmed: {data.confirm_brown}</li>
+                            <li><strong>in relief:</strong> {data.relieved}</li>
+                            <li><strong>normal headway:</strong>  {data.sh_np}</li>
+                            <li><strong>hold back:</strong> {data.rec_red}</li>
+                            <li><strong>confirmed:</strong> {data.confirm_brown}</li>
                         </ul>
                     </div>
                     <div className="bodySection">
-                        <p className="buttonTitle">fill-cancel</p>
-                        <button onClick={() => setToggleOff(!toggleOff)}>toggle</button>
+                        {/* <p className="buttonTitle"></p> */}
+                        <button onClick={() => setToggleOff(!toggleOff)}>confirm</button>
                     </div>
                 </div>
                 <div className="footer">
@@ -187,15 +191,15 @@ export function ModalBrown(props) {
                 <div className="body">
                     <div className="bodySection">
                         <ul>
-                            <li>in relief: {data.relieved}</li>
-                            <li>normal headway: {data.sh_np}</li>
-                            <li>hold back: {data.rec_brown}</li>
-                            <li>confirmed: {data.confirm_brown}</li>
+                            <li><strong>in relief:</strong> {data.relieved}</li>
+                            <li><strong>normal headway:</strong>  {data.sh_np}</li>
+                            <li><strong>hold back:</strong> {data.rec_brown}</li>
+                            <li><strong>confirmed:</strong> {data.confirm_brown}</li>
                         </ul>
                     </div>
                     <div className="bodySection">
-                        <p className="buttonTitle">fill-cancel</p>
-                        <button onClick={() => setToggleOff(!toggleOff)}>toggle</button>
+                        {/* <p className="buttonTitle"></p> */}
+                        <button onClick={() => setToggleOff(!toggleOff)}>confirm</button>
                     </div>
                 </div>
                 <div className="footer">
@@ -253,15 +257,15 @@ export function ModalBlue(props) {
                 <div className="body">
                     <div className="bodySection">
                         <ul>
-                            <li>in relief: {data.relieved}</li>
-                            <li>normal headway: {data.sh_np}</li>
-                            <li>hold back: {data.rec_blue}</li>
-                            <li>confirmed: {data.confirm_blue}</li>
+                            <li><strong>in relief:</strong> {data.relieved}</li>
+                            <li><strong>normal headway:</strong>  {data.sh_np}</li>
+                            <li><strong>hold back:</strong> {data.rec_blue}</li>
+                            <li><strong>confirmed:</strong> {data.confirm_blue}</li>
                         </ul>
                     </div>
                     <div className="bodySection">
-                        <p className="buttonTitle">fill-cancel</p>
-                        <button onClick={() => setToggleOff(!toggleOff)}>toggle</button>
+                        {/* <p className="buttonTitle"></p> */}
+                        <button onClick={() => setToggleOff(!toggleOff)}>confirm</button>
                     </div>
                 </div>
                 <div className="footer">

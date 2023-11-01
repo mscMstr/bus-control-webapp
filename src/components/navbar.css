@@ -1,26 +1,28 @@
 .navbar {
-    padding: 10px;
-    display: flex;
+    padding: 20px;
+    /* display: flex; */
     background-color: #008b8b;
     align-items: center;
     /*max-width: 1000px;*/
     margin: 0 auto;
+    /* justify-content: center;  */
     /*border-bottom: 1px solid #555;*/
   }
   
   .navbar .links {
       margin-left: auto;
-      padding: 1.25%;
-      border: 5px solid white;
+      padding: 1.10%;
+      border: 3px solid white;
     }
   
   .navbar a {
-    margin-left: 8px;
-    margin-right: 8px;
+    margin-left: 2px;
+    margin-right: 2px;
     text-decoration: none;
-    font-weight: bold;
-    padding: 6px;
+    /* font-weight: bold; */
+    padding: 3px;
     color : white;
+    font-size: 17px;
   }
   
   .navbar a:hover {

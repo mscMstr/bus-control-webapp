@@ -12,7 +12,7 @@ const Navbar = ({ setToken }) => {
             <div className="links">
                 <Link to="/">Home</Link>
                 <Link>|</Link>
-                <Link to="/dashboardNavyPier">NavyPier</Link>
+                <Link to="/dashboardNavyPier">Navy Pier</Link>
                 <Link>|</Link>
                 <Link to="/dashboardRed">Red</Link>
                 <Link>|</Link>
