@@ -57,7 +57,7 @@ export function ModalNavyPier(props) {
                             <li><strong>pred. headway:</strong>  {data.h_np}</li>
                             <li><strong>pred. next headway:</strong>  {data.fh_np}</li>
                             <li><strong>hold/move up by:</strong>  {data.rec_np}</li>
-                            <li><strong>confirmed:</strong>  {data.confirm_np}</li>
+                            <li><strong>confirmed:</strong>  {data.conf_np}</li>
                         </ul>
                     </div>
                     <div className="bodySection">
@@ -128,7 +128,7 @@ export function ModalRed(props) {
                             <li><strong>in relief:</strong> {data.relieved}</li>
                             <li><strong>normal headway:</strong>  {data.sh_np}</li>
                             <li><strong>hold back:</strong> {data.rec_red}</li>
-                            <li><strong>confirmed:</strong> {data.confirm_brown}</li>
+                            <li><strong>confirmed:</strong> {data.conf_red}</li>
                         </ul>
                     </div>
                     <div className="bodySection">
@@ -194,7 +194,7 @@ export function ModalBrown(props) {
                             <li><strong>in relief:</strong> {data.relieved}</li>
                             <li><strong>normal headway:</strong>  {data.sh_np}</li>
                             <li><strong>hold back:</strong> {data.rec_brown}</li>
-                            <li><strong>confirmed:</strong> {data.confirm_brown}</li>
+                            <li><strong>confirmed:</strong> {data.conf_brown}</li>
                         </ul>
                     </div>
                     <div className="bodySection">
@@ -260,7 +260,7 @@ export function ModalBlue(props) {
                             <li><strong>in relief:</strong> {data.relieved}</li>
                             <li><strong>normal headway:</strong>  {data.sh_np}</li>
                             <li><strong>hold back:</strong> {data.rec_blue}</li>
-                            <li><strong>confirmed:</strong> {data.confirm_blue}</li>
+                            <li><strong>confirmed:</strong> {data.conf_blue}</li>
                         </ul>
                     </div>
                     <div className="bodySection">
