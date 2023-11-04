@@ -8,34 +8,34 @@ export function ModalNavyPier(props) {
     const oid = (props.rowData["oid"])
     const vid = (props.rowData["vid"])
     const [data, setData] = useState([])
-    const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(rid)
-    const dataUrl = "http://127.0.0.1:5000/bus/".concat(rid)
+    const toggleUrl = "ttps://bus-control-web-demo.ue.r.appspot.com/bus/toggleOff/".concat(rid)
+    const dataUrl = "https://bus-control-web-demo.ue.r.appspot.com/bus/top/3"
 
     const [toggleOff, setToggleOff] = useState(false) 
 
+    // useEffect(() => {
+    //     DATA.map(bus => (
+    //         //console.log(bus.run);
+    //         bus.rid == rid 
+    //             ? setData(bus)
+    //             : null
+    //     ))
+    // }, []);
     useEffect(() => {
-        DATA.map(bus => (
-            //console.log(bus.run);
-            bus.rid == rid 
-                ? setData(bus)
-                : null
-        ))
-    }, []);
-    // useEffect(() => {
-    //     fetch(toggleUrl)
-    //         .then(response => {
-    //             response.json()
-    //         })
-    // }, [toggleOff, toggleUrl]);
+        fetch(toggleUrl)
+            .then(response => {
+                response.json()
+            })
+    }, [toggleOff, toggleUrl]);
 
-    // useEffect(() => {
-    //     fetch(dataUrl)
-    //         .then(response => {
-    //             response.json()
-    //         })
-    //         .then(data => setData(data))
-    //     console.log(data)
-    // }, [data, dataUrl])
+    useEffect(() => {
+        fetch(dataUrl)
+            .then(response => {
+                response.json()
+            })
+            .then(data => setData(data))
+        console.log(data)
+    }, [data, dataUrl])
 
     return (
         <div className="modalBackground">
@@ -89,29 +89,29 @@ export function ModalRed(props) {
 
     const [toggleOff, setToggleOff] = useState(false) 
 
+    // useEffect(() => {
+    //     DATA.map(bus => (
+    //         //console.log(bus.run);
+    //         bus.rid === rid 
+    //             ? setData(bus)
+    //             : null
+    //     ))
+    // }, [rid]);
     useEffect(() => {
-        DATA.map(bus => (
-            //console.log(bus.run);
-            bus.rid == rid 
-                ? setData(bus)
-                : null
-        ))
-    }, []);
-    // useEffect(() => {
-    //     fetch(toggleUrl)
-    //         .then(response => {
-    //             response.json()
-    //         })
-    // }, [toggleOff, toggleUrl]);
+        fetch(toggleUrl)
+            .then(response => {
+                response.json()
+            })
+    }, [toggleOff, toggleUrl]);
 
-    // useEffect(() => {
-    //     fetch(dataUrl)
-    //         .then(response => {
-    //             response.json()
-    //         })
-    //         .then(data => setData(data))
-    //     console.log(data)
-    // }, [data, dataUrl])
+    useEffect(() => {
+        fetch(dataUrl)
+            .then(response => {
+                response.json()
+            })
+            .then(data => setData(data))
+        console.log(data)
+    }, [data, dataUrl])
 
     return (
         <div className="modalBackground">
