@@ -7,9 +7,10 @@ export function ModalNavyPier(props) {
     const rid = (props.rowData["rid"])
     const oid = (props.rowData["oid"])
     const vid = (props.rowData["vid"])
-    const [data, setData] = useState([])
-    const toggleUrl = "ttps://bus-control-web-demo.ue.r.appspot.com/bus/toggleOff/".concat(rid)
-    const dataUrl = "https://bus-control-web-demo.ue.r.appspot.com/bus/top/3"
+    const trip_id = (props.rowData["trip_id"]);
+    const [data, setData] = useState([]);
+    const toggleUrl = "https://bus-control-web-demo.ue.r.appspot.com/bus/toggle?trip_id=".concat(trip_id).concat("&field=conf_np");
+    const dataUrl = "https://bus-control-web-demo.ue.r.appspot.com/bus/top?num=3&orderby=prddtm_np"
 
     const [toggleOff, setToggleOff] = useState(false) 
 
@@ -80,12 +81,13 @@ export function ModalNavyPier(props) {
 
 export function ModalRed(props) {
 
-    const rid = (props.rowData["rid"])
-    const oid = (props.rowData["oid"])
-    const vid = (props.rowData["vid"])
-    const [data, setData] = useState([])
-    const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(rid)
-    const dataUrl = "http://127.0.0.1:5000/bus/".concat(rid)
+    const rid = (props.rowData["rid"]);
+    const oid = (props.rowData["oid"]);
+    const vid = (props.rowData["vid"]);
+    const trip_id = (props.rowData["trip_id"]);
+    const [data, setData] = useState([]);
+    const toggleUrl = "https://bus-control-web-demo.ue.r.appspot.com/bus/toggle?trip_id=".concat(trip_id).concat("&field=conf_red");
+    const dataUrl = "https://bus-control-web-demo.ue.r.appspot.com/bus/top/".concat(rid)
 
     const [toggleOff, setToggleOff] = useState(false) 
 
@@ -100,18 +102,18 @@ export function ModalRed(props) {
     useEffect(() => {
         fetch(toggleUrl)
             .then(response => {
-                response.json()
-            })
+                response.json();
+            });
     }, [toggleOff, toggleUrl]);
 
     useEffect(() => {
         fetch(dataUrl)
             .then(response => {
-                response.json()
+                response.json();
             })
-            .then(data => setData(data))
-        console.log(data)
-    }, [data, dataUrl])
+            .then(data => setData(data));
+        console.log(data);
+    }, [data, dataUrl]);
 
     return (
         <div className="modalBackground">
@@ -149,35 +151,36 @@ export function ModalBrown(props) {
     const rid = (props.rowData["rid"])
     const oid = (props.rowData["oid"])
     const vid = (props.rowData["vid"])
-    const [data, setData] = useState([])
-    const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(rid)
+    const trip_id = (props.rowData["trip_id"]);
+    const [data, setData] = useState([]);
+    const toggleUrl = "https://bus-control-web-demo.ue.r.appspot.com/bus/toggle?trip_id=".concat(trip_id).concat("&field=conf_brown");
     const dataUrl = "http://127.0.0.1:5000/bus/".concat(rid)
 
     const [toggleOff, setToggleOff] = useState(false) 
 
+    // useEffect(() => {
+    //     DATA.map(bus => (
+    //         //console.log(bus.run);
+    //         bus.rid == rid 
+    //             ? setData(bus)
+    //             : null
+    //     ))
+    // }, []);
     useEffect(() => {
-        DATA.map(bus => (
-            //console.log(bus.run);
-            bus.rid == rid 
-                ? setData(bus)
-                : null
-        ))
-    }, []);
-    // useEffect(() => {
-    //     fetch(toggleUrl)
-    //         .then(response => {
-    //             response.json()
-    //         })
-    // }, [toggleOff, toggleUrl]);
+        fetch(toggleUrl)
+            .then(response => {
+                response.json()
+            })
+    }, [toggleOff, toggleUrl]);
 
-    // useEffect(() => {
-    //     fetch(dataUrl)
-    //         .then(response => {
-    //             response.json()
-    //         })
-    //         .then(data => setData(data))
-    //     console.log(data)
-    // }, [data, dataUrl])
+    useEffect(() => {
+        fetch(dataUrl)
+            .then(response => {
+                response.json()
+            })
+            .then(data => setData(data))
+        console.log(data)
+    }, [data, dataUrl])
 
     return (
         <div className="modalBackground">
@@ -215,35 +218,36 @@ export function ModalBlue(props) {
     const rid = (props.rowData["rid"])
     const oid = (props.rowData["oid"])
     const vid = (props.rowData["vid"])
-    const [data, setData] = useState([])
-    const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(rid)
+    const trip_id = (props.rowData["trip_id"]);
+    const [data, setData] = useState([]);
+    const toggleUrl = "https://bus-control-web-demo.ue.r.appspot.com/bus/toggle?trip_id=".concat(trip_id).concat("&field=conf_np");
     const dataUrl = "http://127.0.0.1:5000/bus/".concat(rid)
 
     const [toggleOff, setToggleOff] = useState(false) 
 
+    // useEffect(() => {
+    //     DATA.map(bus => (
+    //         //console.log(bus.run);
+    //         bus.rid == rid 
+    //             ? setData(bus)
+    //             : null
+    //     ))
+    // }, []);
     useEffect(() => {
-        DATA.map(bus => (
-            //console.log(bus.run);
-            bus.rid == rid 
-                ? setData(bus)
-                : null
-        ))
-    }, []);
-    // useEffect(() => {
-    //     fetch(toggleUrl)
-    //         .then(response => {
-    //             response.json()
-    //         })
-    // }, [toggleOff, toggleUrl]);
+        fetch(toggleUrl)
+            .then(response => {
+                response.json()
+            })
+    }, [toggleOff, toggleUrl]);
 
-    // useEffect(() => {
-    //     fetch(dataUrl)
-    //         .then(response => {
-    //             response.json()
-    //         })
-    //         .then(data => setData(data))
-    //     console.log(data)
-    // }, [data, dataUrl])
+    useEffect(() => {
+        fetch(dataUrl)
+            .then(response => {
+                response.json()
+            })
+            .then(data => setData(data))
+        console.log(data)
+    }, [data, dataUrl])
 
     return (
         <div className="modalBackground">

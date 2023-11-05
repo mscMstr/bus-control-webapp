@@ -1,16 +1,23 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { useTable } from 'react-table';
 import DATA from './data/data.json';
 import { COLUMNS_NAVY_PIER, COLUMNS_RED, COLUMNS_BROWN, COLUMNS_BLUE } from './columns';
 import './table.css';
 import DataTable from 'react';
-// import tableData from './tableData.js'
+import TableData from './tableData.js'
 import {ModalNavyPier, ModalRed, ModalBrown, ModalBlue} from "./Modal"
 
 export const TableNavyPier = () => {
 
     const columns = useMemo(() => COLUMNS_NAVY_PIER, [])
-    const data = useMemo(() => DATA, [])
+    //const data = useMemo(() => DATA, [])
+    const [data, setData] = useState([]);
+
+    // useEffect(() => {
+        console.log(data);
+        setData(TableData("https://bus-control-web-demo.ue.r.appspot.com/bus/top?num=3&orderby=prddtm_np"));
+        console.log(data);
+    // }, [data]);
 
     const conditionalRowStyles = [
         {
@@ -24,7 +31,7 @@ export const TableNavyPier = () => {
 
     const table = useTable({
         columns: columns,
-        data: data
+        data: data,
     })
 
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, } = table
