@@ -77,6 +77,7 @@ export function ModalNavyPier(props) {
                             <li><strong>pred. next headway:</strong>  {data.fh_np}</li>
                             <li><strong>hold/move up by:</strong>  {data.rec_np}</li>
                             <li><strong>confirmed:</strong>  {data.conf_np}</li>
+                            <li><strong>recovery:</strong>  {data.recovery}</li>
                         </ul>
                     </div>
                     <div className="bodySection">
@@ -150,6 +151,7 @@ export function ModalRed(props) {
                             <li><strong>normal headway:</strong>  {data.sh_np}</li>
                             <li><strong>hold back:</strong> {data.rec_red}</li>
                             <li><strong>confirmed:</strong> {data.conf_red}</li>
+                            <li><strong>recovery:</strong>  {data.recovery}</li>
                         </ul>
                     </div>
                     <div className="bodySection">
@@ -218,6 +220,7 @@ export function ModalBrown(props) {
                             <li><strong>normal headway:</strong>  {data.sh_np}</li>
                             <li><strong>hold back:</strong> {data.rec_brown}</li>
                             <li><strong>confirmed:</strong> {data.conf_brown}</li>
+                            <li><strong>recovery:</strong>  {data.recovery}</li>
                         </ul>
                     </div>
                     <div className="bodySection">
@@ -286,6 +289,7 @@ export function ModalBlue(props) {
                             <li><strong>normal headway:</strong>  {data.sh_np}</li>
                             <li><strong>hold back:</strong> {data.rec_blue}</li>
                             <li><strong>confirmed:</strong> {data.conf_blue}</li>
+                            <li><strong>recovery:</strong>  {data.recovery}</li>
                         </ul>
                     </div>
                     <div className="bodySection">

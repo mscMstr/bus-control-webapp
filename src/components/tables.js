@@ -11,7 +11,6 @@ export const TableNavyPier = () => {
     const [error, setError] = useState(null);
   
     const columns = useMemo(() => COLUMNS_NAVY_PIER, [])
-    // const { data, loading, error } = useTableData("https://bus-control-web-demo.ue.r.appspot.com/bus/top?num=3&orderby=prddtm_np");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -117,7 +116,6 @@ export const TableRed = () => {
     const [error, setError] = useState(null);
   
     const columns = useMemo(() => COLUMNS_RED, [])
-    // const { data, loading, error } = useTableData("https://bus-control-web-demo.ue.r.appspot.com/bus/top?num=3&orderby=prddtm_np");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -329,7 +327,6 @@ export const TableBlue = () => {
     const [error, setError] = useState(null);
   
     const columns = useMemo(() => COLUMNS_BLUE, [])
-    // const { data, loading, error } = useTableData("https://bus-control-web-demo.ue.r.appspot.com/bus/top?num=3&orderby=prddtm_np");
 
     useEffect(() => {
         const fetchData = async () => {
