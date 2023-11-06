@@ -1,41 +1,61 @@
 import React, { useState, useEffect } from "react"
 import "./modal.css"
-import DATA from './data/data.json';
 
 export function ModalNavyPier(props) {
+    console.log('Modal rowData:', props.rowData);
+    const trip_id = (props.rowData["trip_id"]);
+    const [data, setData] = useState([]);
+    const toggleConfUrl = "https://bus-control-web-demo.ue.r.appspot.com/bus/toggle?trip_id=".concat(trip_id).concat("&field=conf_np");
+    const toggleOnUrl = "https://bus-control-web-demo.ue.r.appspot.com/bus/toggle?trip_id=".concat(trip_id).concat("&field=on");
 
-    const rid = (props.rowData["rid"])
-    const oid = (props.rowData["oid"])
-    const vid = (props.rowData["vid"])
-    const [data, setData] = useState([])
-    const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(rid)
-    const dataUrl = "http://127.0.0.1:5000/bus/".concat(rid)
+    // Function to toggle confirmation
+    const toggleConfirmation = async () => {
+        try {
+            const response = await fetch(toggleConfUrl); // GET is the default method
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            // Assuming the API response includes the new state, you'd update some state here
+        } catch (error) {
+            console.error("Error toggling confirmation:", error);
+        }
+    };
 
-    const [toggleOff, setToggleOff] = useState(false) 
+    // Function to toggle on/off status
+    const toggleOnStatus = async () => {
+        try {
+            const response = await fetch(toggleOnUrl); // GET is the default method
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            // Assuming the API response includes the new state, you'd update some state here
+        } catch (error) {
+            console.error("Error toggling on/off status:", error);
+        }
+    };
 
     useEffect(() => {
-        DATA.map(bus => (
-            //console.log(bus.run);
-            bus.rid == rid 
-                ? setData(bus)
-                : null
-        ))
-    }, []);
-    // useEffect(() => {
-    //     fetch(toggleUrl)
-    //         .then(response => {
-    //             response.json()
-    //         })
-    // }, [toggleOff, toggleUrl]);
+        fetch(toggleConfUrl)
+            .then(response => {
+                response.json()
+            })
+    }, [toggleConfUrl]);
 
-    // useEffect(() => {
-    //     fetch(dataUrl)
-    //         .then(response => {
-    //             response.json()
-    //         })
-    //         .then(data => setData(data))
-    //     console.log(data)
-    // }, [data, dataUrl])
+    useEffect(() => {
+        fetch(toggleOnUrl)
+            .then(response => {
+                response.json()
+            })
+    }, [toggleOnUrl]);
+
+    useEffect(() => {
+        // Set the local state with the prop data only if it is not null or undefined
+        if (props.rowData) {
+          setData(props.rowData);
+        }
+      }, [props.rowData]);
 
     return (
         <div className="modalBackground">
@@ -44,13 +64,12 @@ export function ModalNavyPier(props) {
                     <button onClick={() => props.closeModal(false)}> x </button>
                 </div>
                 <div className="title">
-                    <h1>Run {rid} Bus {vid} Operator {oid}</h1>
+                    <h1>Run {data.rid} Bus {data.vid} Operator {data.oid}</h1>
                 </div>
                 <div className="body">
                     <div className="bodySection">
                         <ul>
                             <li><strong>arrives in:</strong> {data.prdatm_np}</li>
-                            {/* <li>normal departure: {data.schdtm_np}</li> */}
                             <li><strong>in relief:</strong> {data.relieved}</li>
                             <li><strong>ebus?:</strong>  {data.ebus}</li>
                             <li><strong>normal headway:</strong>  {data.sh_np}</li>
@@ -58,14 +77,15 @@ export function ModalNavyPier(props) {
                             <li><strong>pred. next headway:</strong>  {data.fh_np}</li>
                             <li><strong>hold/move up by:</strong>  {data.rec_np}</li>
                             <li><strong>confirmed:</strong>  {data.conf_np}</li>
+                            <li><strong>recovery:</strong>  {data.recovery}</li>
                         </ul>
                     </div>
                     <div className="bodySection">
                         {/* <p className="buttonTitle"></p> */}
-                        <button onClick={() => setToggleOff(!toggleOff)}>confirm</button>
+                        <button onClick={toggleConfirmation}>confirm</button>
                     <div className="bodySection">
                         {/* <p className="buttonTitle"></p> */}
-                        <button onClick={() => setToggleOff(!toggleOff)}>fill/cancel</button>
+                        <button onClick={toggleOnStatus}>fill/cancel</button>
                     </div>
                     </div>
                 </div>
@@ -80,38 +100,40 @@ export function ModalNavyPier(props) {
 
 export function ModalRed(props) {
 
-    const rid = (props.rowData["rid"])
-    const oid = (props.rowData["oid"])
-    const vid = (props.rowData["vid"])
-    const [data, setData] = useState([])
-    const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(rid)
-    const dataUrl = "http://127.0.0.1:5000/bus/".concat(rid)
+    const rid = (props.rowData["rid"]);
+    const oid = (props.rowData["oid"]);
+    const vid = (props.rowData["vid"]);
+    const trip_id = (props.rowData["trip_id"]);
+    const [data, setData] = useState([]);
+    const toggleConfUrl = "https://bus-control-web-demo.ue.r.appspot.com/bus/toggle?trip_id=".concat(trip_id).concat("&field=conf_red");
 
-    const [toggleOff, setToggleOff] = useState(false) 
+    // Function to toggle confirmation
+    const toggleConfirmation = async () => {
+        try {
+            const response = await fetch(toggleConfUrl); // GET is the default method
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            // Assuming the API response includes the new state, you'd update some state here
+        } catch (error) {
+            console.error("Error toggling confirmation:", error);
+        }
+    };
 
     useEffect(() => {
-        DATA.map(bus => (
-            //console.log(bus.run);
-            bus.rid == rid 
-                ? setData(bus)
-                : null
-        ))
-    }, []);
-    // useEffect(() => {
-    //     fetch(toggleUrl)
-    //         .then(response => {
-    //             response.json()
-    //         })
-    // }, [toggleOff, toggleUrl]);
+        fetch(toggleConfUrl)
+            .then(response => {
+                response.json()
+            })
+    }, [toggleConfUrl]);
 
-    // useEffect(() => {
-    //     fetch(dataUrl)
-    //         .then(response => {
-    //             response.json()
-    //         })
-    //         .then(data => setData(data))
-    //     console.log(data)
-    // }, [data, dataUrl])
+    useEffect(() => {
+        // Set the local state with the prop data only if it is not null or undefined
+        if (props.rowData) {
+          setData(props.rowData);
+        }
+      }, [props.rowData]);
 
     return (
         <div className="modalBackground">
@@ -129,11 +151,12 @@ export function ModalRed(props) {
                             <li><strong>normal headway:</strong>  {data.sh_np}</li>
                             <li><strong>hold back:</strong> {data.rec_red}</li>
                             <li><strong>confirmed:</strong> {data.conf_red}</li>
+                            <li><strong>recovery:</strong>  {data.recovery}</li>
                         </ul>
                     </div>
                     <div className="bodySection">
                         {/* <p className="buttonTitle"></p> */}
-                        <button onClick={() => setToggleOff(!toggleOff)}>confirm</button>
+                        <button onClick={toggleConfirmation}>confirm</button>
                     </div>
                 </div>
                 <div className="footer">
@@ -149,35 +172,37 @@ export function ModalBrown(props) {
     const rid = (props.rowData["rid"])
     const oid = (props.rowData["oid"])
     const vid = (props.rowData["vid"])
-    const [data, setData] = useState([])
-    const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(rid)
-    const dataUrl = "http://127.0.0.1:5000/bus/".concat(rid)
+    const trip_id = (props.rowData["trip_id"]);
+    const [data, setData] = useState([]);
+    const toggleConfUrl = "https://bus-control-web-demo.ue.r.appspot.com/bus/toggle?trip_id=".concat(trip_id).concat("&field=conf_brown");
 
-    const [toggleOff, setToggleOff] = useState(false) 
+    // Function to toggle confirmation
+    const toggleConfirmation = async () => {
+        try {
+            const response = await fetch(toggleConfUrl); // GET is the default method
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            // Assuming the API response includes the new state, you'd update some state here
+        } catch (error) {
+            console.error("Error toggling confirmation:", error);
+        }
+    };
 
     useEffect(() => {
-        DATA.map(bus => (
-            //console.log(bus.run);
-            bus.rid == rid 
-                ? setData(bus)
-                : null
-        ))
-    }, []);
-    // useEffect(() => {
-    //     fetch(toggleUrl)
-    //         .then(response => {
-    //             response.json()
-    //         })
-    // }, [toggleOff, toggleUrl]);
+        fetch(toggleConfUrl)
+            .then(response => {
+                response.json()
+            })
+    }, [toggleConfUrl]);
 
-    // useEffect(() => {
-    //     fetch(dataUrl)
-    //         .then(response => {
-    //             response.json()
-    //         })
-    //         .then(data => setData(data))
-    //     console.log(data)
-    // }, [data, dataUrl])
+    useEffect(() => {
+        // Set the local state with the prop data only if it is not null or undefined
+        if (props.rowData) {
+          setData(props.rowData);
+        }
+      }, [props.rowData]);
 
     return (
         <div className="modalBackground">
@@ -195,11 +220,12 @@ export function ModalBrown(props) {
                             <li><strong>normal headway:</strong>  {data.sh_np}</li>
                             <li><strong>hold back:</strong> {data.rec_brown}</li>
                             <li><strong>confirmed:</strong> {data.conf_brown}</li>
+                            <li><strong>recovery:</strong>  {data.recovery}</li>
                         </ul>
                     </div>
                     <div className="bodySection">
                         {/* <p className="buttonTitle"></p> */}
-                        <button onClick={() => setToggleOff(!toggleOff)}>confirm</button>
+                        <button onClick={toggleConfirmation}>confirm</button>
                     </div>
                 </div>
                 <div className="footer">
@@ -215,35 +241,37 @@ export function ModalBlue(props) {
     const rid = (props.rowData["rid"])
     const oid = (props.rowData["oid"])
     const vid = (props.rowData["vid"])
-    const [data, setData] = useState([])
-    const toggleUrl = "http://127.0.0.1:5000/bus/toggleOff/".concat(rid)
-    const dataUrl = "http://127.0.0.1:5000/bus/".concat(rid)
+    const trip_id = (props.rowData["trip_id"]);
+    const [data, setData] = useState([]);
+    const toggleConfUrl = "https://bus-control-web-demo.ue.r.appspot.com/bus/toggle?trip_id=".concat(trip_id).concat("&field=conf_blue");
 
-    const [toggleOff, setToggleOff] = useState(false) 
+    // Function to toggle confirmation
+    const toggleConfirmation = async () => {
+        try {
+            const response = await fetch(toggleConfUrl); // GET is the default method
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            // Assuming the API response includes the new state, you'd update some state here
+        } catch (error) {
+            console.error("Error toggling confirmation:", error);
+        }
+    };
 
     useEffect(() => {
-        DATA.map(bus => (
-            //console.log(bus.run);
-            bus.rid == rid 
-                ? setData(bus)
-                : null
-        ))
-    }, []);
-    // useEffect(() => {
-    //     fetch(toggleUrl)
-    //         .then(response => {
-    //             response.json()
-    //         })
-    // }, [toggleOff, toggleUrl]);
+        fetch(toggleConfUrl)
+            .then(response => {
+                response.json()
+            })
+    }, [toggleConfUrl]);
 
-    // useEffect(() => {
-    //     fetch(dataUrl)
-    //         .then(response => {
-    //             response.json()
-    //         })
-    //         .then(data => setData(data))
-    //     console.log(data)
-    // }, [data, dataUrl])
+    useEffect(() => {
+        // Set the local state with the prop data only if it is not null or undefined
+        if (props.rowData) {
+          setData(props.rowData);
+        }
+      }, [props.rowData]);
 
     return (
         <div className="modalBackground">
@@ -261,11 +289,12 @@ export function ModalBlue(props) {
                             <li><strong>normal headway:</strong>  {data.sh_np}</li>
                             <li><strong>hold back:</strong> {data.rec_blue}</li>
                             <li><strong>confirmed:</strong> {data.conf_blue}</li>
+                            <li><strong>recovery:</strong>  {data.recovery}</li>
                         </ul>
                     </div>
                     <div className="bodySection">
                         {/* <p className="buttonTitle"></p> */}
-                        <button onClick={() => setToggleOff(!toggleOff)}>confirm</button>
+                        <button onClick={toggleConfirmation}>confirm</button>
                     </div>
                 </div>
                 <div className="footer">
