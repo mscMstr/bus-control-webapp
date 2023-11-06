@@ -38,16 +38,6 @@ export const TableNavyPier = () => {
     const [selectedRowData, setSelectedRowData] = useState([]);
     const [openModal, setOpenModal] = useState(false);
 
-    const conditionalRowStyles = [
-        {
-          when: row => row.on = 0,
-          style: {
-            backgroundColor: 'gray',
-            color: 'red',
-          },
-        },
-      ];
-
     const table = useTable({
         columns: columns,
         data: data,
@@ -142,16 +132,6 @@ export const TableRed = () => {
     
     const [selectedRowData, setSelectedRowData] = useState([]);
     const [openModal, setOpenModal] = useState(false);
-
-    const conditionalRowStyles = [
-        {
-          when: row => row.on = 0,
-          style: {
-            backgroundColor: 'gray',
-            color: 'red',
-          },
-        },
-      ];
 
     const table = useTable({
         columns: columns,
@@ -249,16 +229,6 @@ export const TableBrown = () => {
     const [selectedRowData, setSelectedRowData] = useState([]);
     const [openModal, setOpenModal] = useState(false);
 
-    const conditionalRowStyles = [
-        {
-          when: row => row.on = 0,
-          style: {
-            backgroundColor: 'gray',
-            color: 'red',
-          },
-        },
-      ];
-
     const table = useTable({
         columns: columns,
         data: data,
@@ -353,16 +323,6 @@ export const TableBlue = () => {
     
     const [selectedRowData, setSelectedRowData] = useState([]);
     const [openModal, setOpenModal] = useState(false);
-
-    const conditionalRowStyles = [
-        {
-          when: row => row.on = 0,
-          style: {
-            backgroundColor: 'gray',
-            color: 'red',
-          },
-        },
-      ];
 
     const table = useTable({
         columns: columns,

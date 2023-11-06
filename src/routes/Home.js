@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ctaImage from './images/cta.png';  // importing the image
 import mitImage from './images/mit.png';  // importing the image
 import neuImage from './images/neu.png';  // importing the image
