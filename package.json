@@ -1,7 +1,6 @@
 {
   "name": "bus-tool",
   "version": "0.1.0",
-  "homepage": "https://mscmstr.github.io/bus-control-webapp",
   "private": true,
   "proxy": "http://localhost:5000/",
   "dependencies": {
