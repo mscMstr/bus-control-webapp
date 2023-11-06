@@ -1,23 +1,43 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { useTable } from 'react-table';
-import DATA from './data/data.json';
 import { COLUMNS_NAVY_PIER, COLUMNS_RED, COLUMNS_BROWN, COLUMNS_BLUE } from './columns';
 import './table.css';
-import DataTable from 'react';
-import TableData from './tableData.js'
 import {ModalNavyPier, ModalRed, ModalBrown, ModalBlue} from "./Modal"
+import useTableData from './useTableData'
 
 export const TableNavyPier = () => {
-
-    const columns = useMemo(() => COLUMNS_NAVY_PIER, [])
-    //const data = useMemo(() => DATA, [])
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+  
+    const columns = useMemo(() => COLUMNS_NAVY_PIER, [])
+    // const { data, loading, error } = useTableData("https://bus-control-web-demo.ue.r.appspot.com/bus/top?num=3&orderby=prddtm_np");
 
-    // useEffect(() => {
-        console.log(data);
-        setData(TableData("https://bus-control-web-demo.ue.r.appspot.com/bus/top?num=3&orderby=prddtm_np"));
-        console.log(data);
-    // }, [data]);
+    useEffect(() => {
+        const fetchData = async () => {
+          setLoading(true);
+          try {
+            const response = await fetch("https://bus-control-web-demo.ue.r.appspot.com/bus/top?num=3&orderby=prddtm_np");
+            if (!response.ok) {
+              // This will capture HTTP errors like 404 or 500, but not network errors
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const json = await response.json();
+            setData(json);
+          } catch (error) {
+            // If the error is a network error, error.message might be something like "Failed to fetch"
+            setError(error);
+            console.error("Fetching data error:", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+      
+        fetchData();
+      }, []);
+    
+    const [selectedRowData, setSelectedRowData] = useState([]);
+    const [openModal, setOpenModal] = useState(false);
 
     const conditionalRowStyles = [
         {
@@ -34,20 +54,30 @@ export const TableNavyPier = () => {
         data: data,
     })
 
-    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, } = table
+    const { getTableProps, 
+        getTableBodyProps, 
+        headerGroups, 
+        rows, 
+        prepareRow, } = table
 
-    const [selectedRowData, setSelectedRowData] = useState([]);
+    const id = (selectedRowData["trip_id"])
 
     const getSelectedRowValues = selectedRow => {
-        setSelectedRowData({ ...selectedRow.values });
+        setSelectedRowData(selectedRow.original); // use .original to get the full data object
     };
 
-    const [openModal, setOpenModal] = useState(false);
-    const id = (selectedRowData["rid"])
     
+    if (loading) {
+        return <div>Loading...</div>; // Or some spinner component
+      }
+    
+      if (error) {
+        return <div>Error: {error.message}</div>;
+      }
+
   return (
     <div className="table">
-        {openModal && <ModalNavyPier closeModal={setOpenModal} run={id} rowData={selectedRowData} />}
+        {openModal && <ModalNavyPier closeModal={setOpenModal} trip_id={id} rowData={selectedRowData} />}
         <table {...getTableProps()}>
             <thead>
                 {headerGroups.map((headerGroup) => (
@@ -82,24 +112,74 @@ export const TableNavyPier = () => {
 
 export const TableRed = () => {
 
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+  
     const columns = useMemo(() => COLUMNS_RED, [])
-    const data = useMemo(() => DATA, [])
+    // const { data, loading, error } = useTableData("https://bus-control-web-demo.ue.r.appspot.com/bus/top?num=3&orderby=prddtm_np");
+
+    useEffect(() => {
+        const fetchData = async () => {
+          setLoading(true);
+          try {
+            const response = await fetch("https://bus-control-web-demo.ue.r.appspot.com/bus/top?num=3&orderby=prdtm_red");
+            if (!response.ok) {
+              // This will capture HTTP errors like 404 or 500, but not network errors
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const json = await response.json();
+            setData(json);
+          } catch (error) {
+            // If the error is a network error, error.message might be something like "Failed to fetch"
+            setError(error);
+            console.error("Fetching data error:", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+      
+        fetchData();
+      }, []);
+    
+    const [selectedRowData, setSelectedRowData] = useState([]);
+    const [openModal, setOpenModal] = useState(false);
+
+    const conditionalRowStyles = [
+        {
+          when: row => row.on = 0,
+          style: {
+            backgroundColor: 'gray',
+            color: 'red',
+          },
+        },
+      ];
 
     const table = useTable({
         columns: columns,
-        data: data
+        data: data,
     })
 
-    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, } = table
+    const { getTableProps, 
+        getTableBodyProps, 
+        headerGroups, 
+        rows, 
+        prepareRow, } = table
 
-    const [selectedRowData, setSelectedRowData] = useState([]);
+    const id = (selectedRowData["rid"])
 
     const getSelectedRowValues = selectedRow => {
-        setSelectedRowData({ ...selectedRow.values });
+        setSelectedRowData(selectedRow.original); // use .original to get the full data object
     };
 
-    const [openModal, setOpenModal] = useState(false);
-    const id = (selectedRowData["rid"])
+    
+    if (loading) {
+        return <div>Loading...</div>; // Or some spinner component
+      }
+    
+      if (error) {
+        return <div>Error: {error.message}</div>;
+      }
     
   return (
     <div className="table">
@@ -138,24 +218,74 @@ export const TableRed = () => {
 
 export const TableBrown = () => {
 
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+  
     const columns = useMemo(() => COLUMNS_BROWN, [])
-    const data = useMemo(() => DATA, [])
+    // const { data, loading, error } = useTableData("https://bus-control-web-demo.ue.r.appspot.com/bus/top?num=3&orderby=prddtm_np");
+
+    useEffect(() => {
+        const fetchData = async () => {
+          setLoading(true);
+          try {
+            const response = await fetch("https://bus-control-web-demo.ue.r.appspot.com/bus/top?num=3&orderby=prdtm_brown");
+            if (!response.ok) {
+              // This will capture HTTP errors like 404 or 500, but not network errors
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const json = await response.json();
+            setData(json);
+          } catch (error) {
+            // If the error is a network error, error.message might be something like "Failed to fetch"
+            setError(error);
+            console.error("Fetching data error:", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+      
+        fetchData();
+      }, []);
+    
+    const [selectedRowData, setSelectedRowData] = useState([]);
+    const [openModal, setOpenModal] = useState(false);
+
+    const conditionalRowStyles = [
+        {
+          when: row => row.on = 0,
+          style: {
+            backgroundColor: 'gray',
+            color: 'red',
+          },
+        },
+      ];
 
     const table = useTable({
         columns: columns,
-        data: data
+        data: data,
     })
 
-    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, } = table
+    const { getTableProps, 
+        getTableBodyProps, 
+        headerGroups, 
+        rows, 
+        prepareRow, } = table
 
-    const [selectedRowData, setSelectedRowData] = useState([]);
+    const id = (selectedRowData["rid"])
 
     const getSelectedRowValues = selectedRow => {
-        setSelectedRowData({ ...selectedRow.values });
+        setSelectedRowData(selectedRow.original); // use .original to get the full data object
     };
 
-    const [openModal, setOpenModal] = useState(false);
-    const id = (selectedRowData["rid"])
+    
+    if (loading) {
+        return <div>Loading...</div>; // Or some spinner component
+      }
+    
+      if (error) {
+        return <div>Error: {error.message}</div>;
+      }
     
   return (
     <div className="table">
@@ -194,24 +324,74 @@ export const TableBrown = () => {
 
 export const TableBlue = () => {
 
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+  
     const columns = useMemo(() => COLUMNS_BLUE, [])
-    const data = useMemo(() => DATA, [])
+    // const { data, loading, error } = useTableData("https://bus-control-web-demo.ue.r.appspot.com/bus/top?num=3&orderby=prddtm_np");
+
+    useEffect(() => {
+        const fetchData = async () => {
+          setLoading(true);
+          try {
+            const response = await fetch("https://bus-control-web-demo.ue.r.appspot.com/bus/top?num=3&orderby=prdtm_blue");
+            if (!response.ok) {
+              // This will capture HTTP errors like 404 or 500, but not network errors
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const json = await response.json();
+            setData(json);
+          } catch (error) {
+            // If the error is a network error, error.message might be something like "Failed to fetch"
+            setError(error);
+            console.error("Fetching data error:", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+      
+        fetchData();
+      }, []);
+    
+    const [selectedRowData, setSelectedRowData] = useState([]);
+    const [openModal, setOpenModal] = useState(false);
+
+    const conditionalRowStyles = [
+        {
+          when: row => row.on = 0,
+          style: {
+            backgroundColor: 'gray',
+            color: 'red',
+          },
+        },
+      ];
 
     const table = useTable({
         columns: columns,
-        data: data
+        data: data,
     })
 
-    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, } = table
+    const { getTableProps, 
+        getTableBodyProps, 
+        headerGroups, 
+        rows, 
+        prepareRow, } = table
 
-    const [selectedRowData, setSelectedRowData] = useState([]);
+    const id = (selectedRowData["rid"])
 
     const getSelectedRowValues = selectedRow => {
-        setSelectedRowData({ ...selectedRow.values });
+        setSelectedRowData(selectedRow.original); // use .original to get the full data object
     };
 
-    const [openModal, setOpenModal] = useState(false);
-    const id = (selectedRowData["rid"])
+    
+    if (loading) {
+        return <div>Loading...</div>; // Or some spinner component
+      }
+    
+      if (error) {
+        return <div>Error: {error.message}</div>;
+      }
     
   return (
     <div className="table">

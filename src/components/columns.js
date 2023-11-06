@@ -5,7 +5,7 @@ export const COLUMNS_NAVY_PIER = [
         accessor: 'rid',
     },
     {
-        Header: 'Bus ID',
+        Header: 'Bus',
         accessor: 'vid',
     },
     {
@@ -14,7 +14,7 @@ export const COLUMNS_NAVY_PIER = [
     },
     {
         Header: "Departs in",
-        accessor: "prddtm_np",
+        accessor: "time_from_now",
     },
     {
         Header: 'Schd. Deviation',
@@ -32,7 +32,7 @@ export const COLUMNS_RED = [
         accessor: 'rid',
     },
     {
-        Header: 'Bus ID',
+        Header: 'Bus',
         accessor: 'vid',
     },
     {
@@ -41,7 +41,7 @@ export const COLUMNS_RED = [
     },
     {
         Header: "Arrives in",
-        accessor: "prdtm_red",
+        accessor: "time_from_now",
     },
     {
         Header: 'Schd. Deviation',
@@ -62,6 +62,10 @@ export const COLUMNS_RED = [
     {
         Header: 'Back Status', 
         accessor: 'fh_msg_red'
+    },
+    {
+        Header: 'Rec. Holding', 
+        accessor: 'rec_red'
     }
 ]
 
@@ -71,7 +75,7 @@ export const COLUMNS_BROWN = [
         accessor: 'rid',
     },
     {
-        Header: 'Bus ID',
+        Header: 'Bus',
         accessor: 'vid',
     },
     {
@@ -80,7 +84,7 @@ export const COLUMNS_BROWN = [
     },
     {
         Header: "Arrives in",
-        accessor: "prdtm_brown",
+        accessor: "time_from_now",
     },
     {
         Header: 'Schd. Deviation',
@@ -114,7 +118,7 @@ export const COLUMNS_BLUE = [
         accessor: 'rid',
     },
     {
-        Header: 'Bus ID',
+        Header: 'Bus',
         accessor: 'vid',
     },
     {
@@ -123,7 +127,7 @@ export const COLUMNS_BLUE = [
     },
     {
         Header: "Arrives in",
-        accessor: "prdtm_blue",
+        accessor: "time_from_now",
     },
     {
         Header: 'Schd. Deviation',
